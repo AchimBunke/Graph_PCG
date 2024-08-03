@@ -1,0 +1,14 @@
+{
+  "name": "com.achioto.gamespace-pcg",
+  "version": "0.0.1",
+  "displayName": "GamespacePCG",
+  "description": "Gamespace generation using gamespace graph and pcg.",
+  "unity": "2022.1",
+  "unityRelease": "0b5",
+  "dependencies": {
+  },
+  "author": {
+    "name": "Achioto",
+    "email": "achioto.solo@gmail.com"
+  }
+}

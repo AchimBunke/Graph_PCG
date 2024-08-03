@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <uie:ObjectField label="Asset" name="SelectedObject" />
+    <uie:PropertyField name="AssetDataInspector" label="Data" />
+    <ui:TextField picking-mode="Ignore" readonly="true" multiline="true" name="Raw" />
+    <ui:Button text="Save" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Save" />
+    <ui:Button text="Remove Data" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Remove" />
+</ui:UXML>

@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Packages/com.achioto.gamespace-pcg/Editor/Graph/Assets/AssetManagerStyle.uss?fileID=7433441132597879392&amp;guid=249bc7e9df14d294f930591e0d35a1b2&amp;type=3#AssetManagerStyle" />
+    <ui:Button text="Test" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Test" />
+    <uie:PropertyField name="InterpolationConfig" style="flex-shrink: 0;" />
+    <uie:PropertyField name="SpatialDistanceConfig" style="flex-shrink: 0;" />
+    <uie:PropertyField name="FeatureDistanceConfig" style="flex-shrink: 0;" />
+    <uie:PropertyField name="SpaceSearchSettings" style="flex-shrink: 0;" />
+    <ui:Button text="Reload" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Reload" />
+    <ui:ListView focusable="true" name="AssetListView" virtualization-method="DynamicHeight" selection-type="Multiple" show-alternating-row-backgrounds="ContentOnly" show-border="false" />
+</ui:UXML>

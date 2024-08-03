@@ -1,0 +1,32 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <ui:ScrollView scroll-deceleration-rate="0,135" elasticity="0,1">
+        <ui:Button text="Refresh Scene" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RefreshSceneButton" />
+        <ui:Button text="ClearGraph" parse-escape-sequences="true" display-tooltip-when-elided="true" name="ClearGraphButton" />
+        <ui:VisualElement style="flex-direction: row;">
+            <ui:TextField picking-mode="Ignore" label="Graph File Path" name="PathField" style="flex-grow: 1; flex-shrink: 1;" />
+            <ui:Button text="Open File..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="PathButton" style="max-width: 150px; flex-grow: 1;" />
+            <ui:Button text="New" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGraphButton" style="max-width: 150px;" />
+        </ui:VisualElement>
+        <ui:Toggle label="Keep Graph" name="KeepGraphToggle" />
+        <ui:Toggle label="Load Update" name="LoadUpdateToggle" />
+        <ui:Button text="Load Graph" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoadGraphButton" />
+        <ui:Button text="Load Graph for open Scene" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoadGraphForCurrentScene" />
+        <ui:Button text="Save Graph" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SaveGraphButton" />
+        <ui:Foldout text="Categories" name="CategoriesFoldout" style="flex-shrink: 0;" />
+        <ui:VisualElement style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; flex-shrink: 0;">
+            <ui:EnumField label="New Category Type" type="Achioto.Gamespace_PCG.Runtime.Graph.Serialization.HGraphAttributeType, achioto.gamespace-pcg" name="NewCategoryTypePopup" />
+            <ui:TextField picking-mode="Ignore" label="New Category Name" name="NewCategoryNameField" />
+            <ui:FloatField label="Min Value" value="42,2" name="NewCategoryMinFloatField" />
+            <ui:FloatField label="Max Value" value="42,2" name="NewCategoryMaxFloatField" />
+            <ui:IntegerField label="Min Value" name="NewCategoryMinIntField" />
+            <ui:IntegerField label="Max Value" name="NewCategoryMaxIntField" />
+            <ui:Button text="Create New Category" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewCategoryButton" />
+        </ui:VisualElement>
+        <ui:Foldout text="Enums" name="EnumFoldout" style="flex-shrink: 0;" />
+        <ui:VisualElement style="flex-shrink: 0;">
+            <ui:TextField picking-mode="Ignore" label="New Enum Name" name="NewEnumField" />
+            <ui:Button text="Create new Enum" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewEnumButton" />
+        </ui:VisualElement>
+        <uie:ObjectField label="Rules" name="RuleDataField" type="Achioto.Gamespace_PCG.Runtime.Graph.Runtime.HGraphRuleCollection, achioto.gamespace-pcg" />
+    </ui:ScrollView>
+</ui:UXML>

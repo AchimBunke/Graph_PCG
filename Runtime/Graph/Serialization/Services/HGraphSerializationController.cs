@@ -354,7 +354,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Services
             try
             {
                 data = JsonConvert.DeserializeObject<HGraphAssetData>(assetData, JSONSerializerSettings);
-                if (data != null)
+                if (data != null && data.attributes != null)
                 {
                     foreach (var a in data.attributes)
                     {

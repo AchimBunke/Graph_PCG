@@ -18,11 +18,6 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
     [CanEditMultipleObjects]
     public class HGraphSceneNodeEditor : Editor
     {
-
-        //*/
-        const string cat_1_name = "test_Category_1";
-        const string cat_2_name = "test_Category_2";
-
         private IDisposable disposables;
         private void OnEnable()
         {
@@ -70,8 +65,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
             visualTree.CloneTree(inspector);
 
             //Debug
-            VisualElement inspectorFoldout = inspector.Q("Default_Inspector");
-            InspectorElement.FillDefaultInspector(inspectorFoldout, serializedObject, this);
+            //VisualElement inspectorFoldout = inspector.Q("Default_Inspector");
+            //InspectorElement.FillDefaultInspector(inspectorFoldout, serializedObject, this);
 
             infoPanel = inspector.Q("InfoPanel");
             infoPanel.Add(missingGamespaceNodeInfo = new HelpBox("Gamespace Graph does not contain information for this node!", HelpBoxMessageType.Error));
@@ -91,30 +86,6 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
             infoPanel.Add(createNodeButton);
             nodeDataField = inspector.Q<PropertyField>("NodeData");
             UpdateNodeDataFields(hNode);
-
-
-
-
-
-            var test = inspector.Q<Button>("Test");
-            test.clicked += () =>
-            {
-                if (!HGraph.Instance.Categories.ContainsKey(cat_1_name))
-                {
-                    var cat = HGraphCategory.Construct(cat_1_name);
-                    cat.Name.Value = cat_1_name;
-                    HGraph.Instance.Categories.Add(cat.HGraphId.Value, cat);
-                }
-                if (!HGraph.Instance.Categories.ContainsKey(cat_2_name))
-                {
-                    var cat = HGraphCategory.Construct(cat_2_name);
-                    cat.Name.Value = cat_2_name;
-                    HGraph.Instance.Categories.Add(cat.HGraphId.Value, cat);
-                }
-
-            };
-
-
             return inspector;
         }
         private void UpdateMissingGamespaceInfo(HGraphSceneNode hNode)

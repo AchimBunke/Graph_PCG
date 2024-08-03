@@ -1,0 +1,30 @@
+.assetEntry {
+    height: 115px;
+    width: 100%;
+}
+
+.assetEntry-image {
+    flex-grow: 1;
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.assetEntry-label {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.assetEntry-icon {
+    width: 15px;
+    height: 15px;
+}
+
+.assetEntry-title {
+    flex-grow: 1;
+    bottom: 0;
+    position: relative;
+    flex-direction: row;
+}

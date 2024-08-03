@@ -8,5 +8,8 @@
   "author": {
     "name": "Achioto",
     "email": "achioto.solo@gmail.com"
+  },
+  "dependencies": {
+    "com.customutilities": "0.0.3"
   }
 }

@@ -88,22 +88,19 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
 
 
             disposables = new CompositeDisposable(
-            hNode.Name.Subscribe(newName => nameField.value = newName),
-            hNode.SuperNode.Subscribe(newSuperNode =>
-            {
-                if (HGraphResources.IsHGraphIdValid(newSuperNode))
+                hNode.Name.Subscribe(newName => nameField.value = newName),
+                hNode.SuperNode.Subscribe(newSuperNode =>
                 {
-                    hGraph.SceneNodes.TryGetValue(newSuperNode, out var sceneSuperNode);
-                    superNodeObjectField.SetValueWithoutNotify(sceneSuperNode);
-                }
-                else
-                    superNodeObjectField.SetValueWithoutNotify(null);
-
-
-                superNodeTextField.SetValueWithoutNotify(newSuperNode);
-
-            }),
-            hNode.Attributes.ObserveAnyChange().Subscribe(_ => RefreshAttributes(inspector, hNode))
+                    if (HGraphResources.IsHGraphIdValid(newSuperNode))
+                    {
+                        hGraph.SceneNodes.TryGetValue(newSuperNode, out var sceneSuperNode);
+                        superNodeObjectField.SetValueWithoutNotify(sceneSuperNode);
+                    }
+                    else
+                        superNodeObjectField.SetValueWithoutNotify(null);
+                    superNodeTextField.SetValueWithoutNotify(newSuperNode);
+                }),
+                hNode.Attributes.ObserveAnyChange().Subscribe(_ => RefreshAttributes(inspector, hNode))
             );
 
 

@@ -9,12 +9,7 @@
     "name": "Achioto",
     "email": "achioto.solo@gmail.com"
   },
-  "dependencies": {
-    "com.unity.splines": "2.5.2",
-    "com.unity.mathematics": "1.2.6",
-    "com.neuecc.unirx" : "7.1.0"
-  },
-  "scopedRegistries": [
+     "scopedRegistries": [
         {
             "name": "package.openupm.com",
             "url": "https://package.openupm.com",
@@ -22,5 +17,10 @@
                 "com.neuecc.unirx"
             ]
         }
-  ]
+    ],
+  "dependencies": {
+    "com.unity.splines": "2.5.2",
+    "com.unity.mathematics": "1.2.6",
+    "com.neuecc.unirx": "7.1.0"
+  }
 }

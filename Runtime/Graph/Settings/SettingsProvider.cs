@@ -6,16 +6,20 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Settings
 {
     static class HGraphSettingsData
     {
-        //public const string PackageDirPath = "Packages/com.achioto.gamespace-pcg";
-        public const string k_HGraphSettingsAssetPath = "Assets/Graph/Settings/HGraphSettings.asset";
+        public const string PackageRuntimeDirPath = "Packages/com.achioto.gamespace-pcg/Runtime/";
+        public const string PackageEditorDirPath = "Packages/com.achioto.gamespace-pcg/Editor/";
+
+
+
+        public const string k_HGraphSettingsAssetPath = PackageRuntimeDirPath + "Graph/Resources/HGraphSettings.asset";
         public const string k_HGraphSettingsName = "HGraph";
         public const string k_HGraphProjectSettingsPath = "Project/" + k_HGraphSettingsName;
         public const string k_HGraphProjectSettingsStyleSheetPath = "Assets/Graph/Settings/hGraphSettings_ui.uss";
 
 
-        public const string k_HGraphDefaultNodeIconPath = "Assets/Graph/NodeIcon.png";
-        public const string k_HGraphErrorNodeIconPath = "Assets/Graph/ErrorNodeIcon.png";
-        public const string k_HGraphHasUserDataIconPath = "Assets/Graph/HasUserDataIcon.png";
+        public const string k_HGraphDefaultNodeIconPath = PackageRuntimeDirPath + "Graph/Resources/NodeIcon.png";
+        public const string k_HGraphErrorNodeIconPath = PackageRuntimeDirPath + "Graph/Resources/ErrorNodeIcon.png";
+        public const string k_HGraphHasUserDataIconPath = PackageRuntimeDirPath + "Graph/Resources/HasUserDataIcon.png";
 
         public const string k_HGraphDefaultRelationPath = "Assets/Graph/Relation.prefab";
         public const string k_HGraphDefaultHGraphNodeInspectorPath = "Assets/Graph/HGraphNodeInspector.uxml";

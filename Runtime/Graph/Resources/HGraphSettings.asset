@@ -25,7 +25,3 @@ MonoBehaviour:
   edgeColors:
   - id: test
     color: {r: 0.9622642, g: 0.040850822, b: 0.040850822, a: 1}
-  - id: test3
-    color: {r: 0.22140849, g: 0.9607843, b: 0.03921567, a: 1}
-  - id: test2
-    color: {r: 0.4245283, g: 0.05006229, b: 0.24923305, a: 1}

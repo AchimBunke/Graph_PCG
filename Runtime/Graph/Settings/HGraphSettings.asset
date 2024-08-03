@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482b1fb3153ffb341a5ccae263aaed09, type: 3}
+  m_Name: HGraphSettings
+  m_EditorClassIdentifier: 
+  defaultHNodeIcon: {fileID: 21300000, guid: ee3a5c85f96d81d4ba98d15752b882ad, type: 3}
+  errorHNodeIcon: {fileID: 21300000, guid: 06f52fa127ad53643bbd04702e7ab0c8, type: 3}
+  defaultRelation: {fileID: 3058923512974288912, guid: 389a03ffd6514074c83daa28a492367d, type: 3}
+  defaultHGraphNodeInspector: {fileID: 9197481963319205126, guid: ff415473b956f994f8669cc69ad394ed, type: 3}
+  defaultHGraphNodeDrawer: {fileID: 9197481963319205126, guid: af6eb1674a55e3c459cbed74ef6eca40, type: 3}
+  defaultHGraphRelationInspector: {fileID: 9197481963319205126, guid: 3bac283e9e2b7e44190877859867c153, type: 3}
+  hGraphManagerWindow: {fileID: 9197481963319205126, guid: c432bf5551a9a8248ac830bd97e550de, type: 3}
+  hGraphAssetManagerWindow: {fileID: 9197481963319205126, guid: 29294c58165112e47a6fb46e291441b6, type: 3}
+  hGraphAssetRecommenderWindow: {fileID: 9197481963319205126, guid: 6d520e5b3bb13f241a193942e596192c, type: 3}
+  hasUserDataIcon: {fileID: 2800000, guid: ee3a5c85f96d81d4ba98d15752b882ad, type: 3}
+  edgeColors:
+  - id: test
+    color: {r: 0.9622642, g: 0.040850822, b: 0.040850822, a: 1}
+  - id: test3
+    color: {r: 0.22140849, g: 0.9607843, b: 0.03921567, a: 1}
+  - id: test2
+    color: {r: 0.4245283, g: 0.05006229, b: 0.24923305, a: 1}

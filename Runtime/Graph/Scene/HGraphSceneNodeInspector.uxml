@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <uie:PropertyField name="HGraphId" binding-path="_hGraphId" />
+    <ui:VisualElement name="InfoPanel" style="flex-grow: 1;" />
+    <uie:PropertyField name="NodeData" />
+    <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Test" style="display: none;" />
+    <ui:Foldout text="Inherited" name="Default_Inspector" />
+</ui:UXML>

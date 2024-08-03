@@ -14,12 +14,6 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [
-        {
-            "name": "com.neuecc.unirx",
-            "expression": "7.1.0",
-            "define": "USE_UNIRX_7_1"
-        }
-    ],
+    "versionDefines": [],
     "noEngineReferences": false
 }

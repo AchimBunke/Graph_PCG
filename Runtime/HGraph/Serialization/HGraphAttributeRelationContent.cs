@@ -1,13 +1,15 @@
 ﻿using System;
 using UnityEngine;
+using UnityUtilities.Attributes;
 
 namespace Achioto.Gamespace_PCG.Runtime.HGraph.Serialization
 {
     [Serializable]
     public class HGraphAttributeRelationContent
     {
-        //TODO: [ReadOnlyField]
+        [ReadOnlyField]
         public HGraphAttributeRelationType type;
+
     }
     [Serializable]
     public class HGraphAttributeRelationContent_Step : HGraphAttributeRelationContent

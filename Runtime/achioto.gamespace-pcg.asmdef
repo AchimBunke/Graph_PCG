@@ -1,7 +1,9 @@
 {
     "name": "achioto.gamespace-pcg",
     "rootNamespace": "Achioto.Gamespace-PCG.Runtime",
-    "references": [],
+    "references": [
+        "GUID:cb98a1f29a8f2e5489295b05c8ffb734"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
@@ -12,11 +14,6 @@
     "versionDefines": [
         {
             "name": "com.neuecc.unirx",
-            "expression": "7.1.0",
-            "define": "USE_UNIRX_7_1"
-        },
-        {
-            "name": "achioto.custom-utilities",
             "expression": "7.1.0",
             "define": "USE_UNIRX_7_1"
         }

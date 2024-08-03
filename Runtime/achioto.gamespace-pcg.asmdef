@@ -1,0 +1,25 @@
+{
+    "name": "achioto.gamespace-pcg",
+    "rootNamespace": "",
+    "references": [
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:cb98a1f29a8f2e5489295b05c8ffb734"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.neuecc.unirx",
+            "expression": "7.1.0",
+            "define": "USE_UNIRX_7_1"
+        }
+    ],
+    "noEngineReferences": false
+}

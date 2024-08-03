@@ -12,5 +12,12 @@
   "dependencies": {
     "com.unity.splines": "2.5.2",
     "com.unity.mathematics": "1.2.6"
-  }
+  },
+  "samples": [
+	{
+		"displayName": "Point Samplers",
+        "description": "Contains a demo for PCGPointSamplers",
+        "path": "Samples~/PointSamplers"
+    }
+	]
 }

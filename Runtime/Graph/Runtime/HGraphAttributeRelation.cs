@@ -22,11 +22,10 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
 
         [SerializeReference]
         private HGraphAttributeRelationContent _data = new();
-        public ReactiveProperty<HGraphAttributeRelationContent> Data { get; } = new();
+        public HGraphAttributeRelationContent Data => _data;
 
         private HGraphAttributeRelation() 
         {
-            Data.Subscribe(v => _data = v);
         }
 
         public static HGraphAttributeRelation Construct(string id, string categoryId, HGraphAttributeRelationContent data)
@@ -34,7 +33,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
             var attributeRelation = new HGraphAttributeRelation();
             attributeRelation.HGraphId.Value = id ;
             attributeRelation._category.Value = categoryId;
-            attributeRelation.Data.Value = data;
+            attributeRelation._data = data;
             return attributeRelation;
         }
         public static HGraphAttributeRelation Construct(HGraphAttributeRelationData data)
@@ -45,7 +44,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
         public void Update(HGraphAttributeRelationData data)
         {
             Category.Value = data.category;
-            Data.Value = data.data;
+            _data = data.data;
         }
     }
 }

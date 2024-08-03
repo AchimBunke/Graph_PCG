@@ -340,7 +340,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Services
             var data = new HGraphAttributeRelationData();
             data.id = attributeRelation.HGraphId.Value;
             data.category = attributeRelation.Category.Value;
-            data.data = attributeRelation.Data.Value;
+            data.data = attributeRelation.Data;
             return data;
         }
 

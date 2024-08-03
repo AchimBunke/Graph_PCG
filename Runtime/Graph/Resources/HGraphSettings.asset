@@ -16,7 +16,7 @@ MonoBehaviour:
   errorHNodeIcon: {fileID: 21300000, guid: 06f52fa127ad53643bbd04702e7ab0c8, type: 3}
   defaultRelation: {fileID: 3058923512974288912, guid: 6ae8b8c026ab36945bb2f993e00cfdb5, type: 3}
   defaultHGraphNodeInspector: {fileID: 9197481963319205126, guid: ff415473b956f994f8669cc69ad394ed, type: 3}
-  defaultHGraphNodeDrawer: {fileID: 9197481963319205126, guid: af6eb1674a55e3c459cbed74ef6eca40, type: 3}
+  defaultHGraphNodeDrawer: {fileID: 9197481963319205126, guid: f8b9c30614211234dbaffd6eae6dff5a, type: 3}
   defaultHGraphRelationInspector: {fileID: 9197481963319205126, guid: 3bac283e9e2b7e44190877859867c153, type: 3}
   hGraphManagerWindow: {fileID: 9197481963319205126, guid: 14d1d688b736a4745b914b1183b54d88, type: 3}
   hGraphAssetManagerWindow: {fileID: 9197481963319205126, guid: 8c5456d26ac3c35499db596754d30842, type: 3}

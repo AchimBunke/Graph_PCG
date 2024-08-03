@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <ui:TextField label="Name" name="Name" />
+    <ui:VisualElement name="SuperNodeFields" style="flex-direction: row;">
+        <uie:ObjectField label="Super Node" name="SuperNodeObject" type="Achioto.Gamespace_PCG.Runtime.Graph.Scene.HGraphSceneNode, achioto.gamespace-pcg" style="flex-grow: 1;" />
+        <ui:TextField picking-mode="Ignore" name="SuperNodeText" style="min-width: 100px;" />
+    </ui:VisualElement>
+    <ui:Foldout text="Attributes" name="Attributes">
+        <ui:VisualElement name="AttributeControl" style="flex-direction: row; flex-shrink: 1; flex-grow: 1; width: 100%;">
+            <ui:Label tabindex="-1" text="Local" parse-escape-sequences="true" display-tooltip-when-elided="true" style="min-width: 105px;" />
+            <ui:VisualElement style="flex-grow: 1; flex-shrink: 1; flex-direction: row;">
+                <ui:Button text="+" parse-escape-sequences="true" display-tooltip-when-elided="true" tooltip="Add Attribute" name="AddAttributeButton" />
+                <uie:ToolbarPopupSearchField focusable="true" name="CategorySearchField" style="flex-shrink: 1; flex-grow: 0; width: 100%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:Foldout>
+</ui:UXML>

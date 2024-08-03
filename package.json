@@ -8,8 +8,5 @@
   "author": {
     "name": "Achioto",
     "email": "achioto.solo@gmail.com"
-  },
-  "dependencies": {
-    "com.customutilities": "https://github.com/AchimBunke/Unity_CustomUtilities.git#v0.3.0-alpha"
   }
 }

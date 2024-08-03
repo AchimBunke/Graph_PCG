@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Achioto.Gamespace_PCG.Runtime.Graph.Runtime;
+using System;
 using System.Xml.Serialization;
 using Unity.Plastic.Newtonsoft.Json;
 using UnityEngine;
@@ -107,7 +108,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 Value = (int)Convert.ChangeType(value, typeof(int));
                 return true;
             }
-            catch (InvalidCastException _)
+            catch (InvalidCastException)
             {
                 return false;
             }
@@ -142,7 +143,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 Value = (bool)Convert.ChangeType(value, typeof(bool));
                 return true;
             }
-            catch (InvalidCastException _)
+            catch (InvalidCastException)
             {
                 return false;
             }
@@ -176,7 +177,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 Value = (float)Convert.ChangeType(value, typeof(float));
                 return true;
             }
-            catch (InvalidCastException _)
+            catch (InvalidCastException)
             {
                 return false;
             }
@@ -220,7 +221,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 }
                 return true;
             }
-            catch (InvalidCastException _)
+            catch (InvalidCastException)
             {
                 return false;
             }
@@ -235,8 +236,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
     public class FlagsEnumHGraphAttribute : EnumHGraphAttribute
     {
         public override double[] EncodeFeatureVector()
-        {//TODO:
-            /*
+        {
             var hEnum = HGraph.Instance.EnumDefinitions[this.Enum];
             double[] oneHot = new double[MaxEnumSize];
             var flags = hEnum.GetFlags(Value);
@@ -245,7 +245,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 oneHot[hEnum.Entries.FindIndex(0, e => e.Name == flag)] = 1;
             }
             return oneHot;
-            */
+
             throw new NotImplementedException();
         }
         public override HGraphAttributeContent DecodeFeatureVector(double[] featureVector)
@@ -282,7 +282,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 HighValue = tuple.Item2;
                 return true;
             }
-            catch (InvalidCastException _)
+            catch (InvalidCastException)
             {
                 return false;
             }
@@ -320,7 +320,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 Vector = (Vector2)Convert.ChangeType(value, typeof(Vector2));
                 return true;
             }
-            catch (InvalidCastException _)
+            catch (InvalidCastException)
             {
                 return false;
             }
@@ -359,7 +359,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 Vector = (Vector3)Convert.ChangeType(value, typeof(Vector3));
                 return true;
             }
-            catch (InvalidCastException _)
+            catch (InvalidCastException)
             {
                 return false;
             }

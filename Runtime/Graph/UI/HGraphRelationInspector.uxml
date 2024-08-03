@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <uie:PropertyField name="HGraphId" binding-path="_hGraphId" label="HGraph Id" />
+    <ui:DropdownField label="Common Relations" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="NewAttributeRelationDropDown" />
+    <ui:Button text="Add Attribute Relation" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewAttributeRelationButton" />
+    <ui:Foldout text="Attribute Relations" name="AttributeRelationFoldout" />
+</ui:UXML>

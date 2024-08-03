@@ -180,7 +180,6 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
         public void SetPCGGraphDirty() => _isGraphDirty = true;
         private bool IsPCGGraphDirty()
         {
-            //TODO
             return _isGraphDirty;
         }
         private void GeneratePCGGraph()

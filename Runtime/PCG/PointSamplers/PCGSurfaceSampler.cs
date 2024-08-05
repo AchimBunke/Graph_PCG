@@ -19,6 +19,7 @@ namespace Achioto.Gamespace_PCG.Runtime.PCG.PointSamplers
     public class PCGSurfaceSampler : PCGPointSampler
     {
         [SerializeField] LayerMask _surfaceMask = Physics.AllLayers;
+        [SerializeField] Collider _targetSurface;
         [SerializeField] Space _space;
         [SerializeField] PCGSampleMode _sampleMode;
         [SerializeField, Tooltip("Relates to the cell size. Higher value responds to more distance between samples")] float _pointExtends = 1f;
@@ -75,7 +76,24 @@ namespace Achioto.Gamespace_PCG.Runtime.PCG.PointSamplers
                 if (_sampleMode == PCGSampleMode.Down || _sampleMode == PCGSampleMode.UpDown)
                 {
                     Vector3 rayStartPoint = new Vector3(cell.x, bounds.max.y, cell.y);
-                    var surfacePoints = Physics.RaycastAll(rayStartPoint, Vector3.down, bounds.extents.y * 2f, SurfaceMask, QueryTriggerInteraction.Ignore);
+                    RaycastHit[] surfacePoints;
+                    if (_targetSurface != null)
+                    {
+                        
+                        if (_targetSurface.Raycast(new Ray(rayStartPoint, Vector3.down), out var hit, bounds.extents.y * 2f))
+                        {
+                            surfacePoints = new RaycastHit[] { hit };
+                        }
+                        else
+                        {
+                            surfacePoints = new RaycastHit[0];
+                        }
+                    }
+                    else
+                    {
+                        surfacePoints = Physics.RaycastAll(rayStartPoint, Vector3.down, bounds.extents.y * 2f, SurfaceMask, QueryTriggerInteraction.Ignore);
+                    }
+
                     surfacePoints = surfacePoints.DistinctBy(h => h.collider).ToArray();
                     foreach (var surface in surfacePoints)// for each surface evaluate if sample. Allows layered surface above each other
                     {
@@ -104,7 +122,23 @@ namespace Achioto.Gamespace_PCG.Runtime.PCG.PointSamplers
                 if (_sampleMode == PCGSampleMode.Up || _sampleMode == PCGSampleMode.UpDown)
                 {
                     Vector3 rayStartPoint = new Vector3(cell.x, bounds.min.y, cell.y);
-                    var surfacePoints = Physics.RaycastAll(rayStartPoint, Vector3.up, bounds.extents.y * 2f, SurfaceMask, QueryTriggerInteraction.Ignore);
+                    RaycastHit[] surfacePoints;
+                    if (_targetSurface != null)
+                    {
+                        if (_targetSurface.Raycast(new Ray(rayStartPoint, Vector3.up), out var hit, bounds.extents.y * 2f))
+                        {
+                            surfacePoints = new RaycastHit[] { hit };
+                        }
+                        else
+                        {
+                            surfacePoints = new RaycastHit[0];
+                        }
+                    }
+                    else
+                    {
+                        surfacePoints = Physics.RaycastAll(rayStartPoint, Vector3.up, bounds.extents.y * 2f, SurfaceMask, QueryTriggerInteraction.Ignore);
+
+                    }
                     surfacePoints = surfacePoints.DistinctBy(h => h.collider).ToArray();
                     foreach (var surface in surfacePoints)// for each surface evaluate if sample. Allows layered surface above each other
                     {
@@ -195,11 +229,29 @@ namespace Achioto.Gamespace_PCG.Runtime.PCG.PointSamplers
                     Gizmos.color = Color.magenta;
                     foreach (var pos in positions)
                     {
-                        var surfacePoints = Physics.RaycastAll(new Vector3(pos.x, bounds.max.y, pos.y), Vector3.down, bounds.extents.y * 2f, SurfaceMask, QueryTriggerInteraction.Ignore);
+                        RaycastHit[] surfacePoints;
+                        if (_targetSurface != null)
+                        {
+                            if (_targetSurface.Raycast(new Ray(new Vector3(pos.x, bounds.max.y, pos.y), Vector3.down), out var hit, bounds.extents.y * 2f))
+                            {
+                                surfacePoints = new RaycastHit[] { hit };
+                            }
+                            else
+                            {
+                                surfacePoints = new RaycastHit[0];
+                            }
+                        }
+                        else
+                        {
+                            surfacePoints = Physics.RaycastAll(new Vector3(pos.x, bounds.max.y, pos.y), Vector3.down, bounds.extents.y * 2f, SurfaceMask, QueryTriggerInteraction.Ignore);
+                        }
                         foreach (var p in surfacePoints)
                         {
-                            Gizmos.DrawCube(p.point, Vector3.one * CellSize * 0.3f);
-                            ++cubeCount;
+                            if (_space.IsPointInsideSpace(p.point))
+                            {
+                                Gizmos.DrawCube(p.point, Vector3.one * CellSize * 0.3f);
+                                ++cubeCount;
+                            }
                         }
                     }
 

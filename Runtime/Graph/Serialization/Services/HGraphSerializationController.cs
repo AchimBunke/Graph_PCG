@@ -264,6 +264,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Services
                 return new HGraphSpaceData()
                 {
                     nodePosition = sceneNode.transform.position,
+                    nodeRotation = sceneNode.transform.rotation,
+                    nodeScale = sceneNode.transform.lossyScale,
                     isAtomic = true,
                     isImplicit = false,
                 };
@@ -273,6 +275,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Services
                 var data = new HGraphSpaceData()
                 {
                     nodePosition = sceneNode.transform.position,
+                    nodeRotation = sceneNode.transform.rotation,
+                    nodeScale = sceneNode.transform.lossyScale,
                     isAtomic = false,
                     isImplicit = space.ImplicitSpace,
                 };

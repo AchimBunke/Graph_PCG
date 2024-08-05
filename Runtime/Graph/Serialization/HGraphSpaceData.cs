@@ -22,6 +22,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
         public bool isAtomic;
         public bool isImplicit;
         public Vector3 nodePosition;
+        public Quaternion nodeRotation;
+        public Vector3 nodeScale;
 
         // SpaceData
         public ColliderType colliderType;
@@ -50,8 +52,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                     return false;
             }
         }
-        private Vector3 GetColliderGlobalCenter() => nodePosition + center;
-
+        private Vector3 GetColliderGlobalCenter() => TransformPoint(center);
+        
         public float Distance(Vector3 point, out Vector3 closestPoint)
         {
             if (isAtomic)
@@ -68,9 +70,9 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
             switch (colliderType)
             {
                 case ColliderType.BoxCollider:
-                    return DistanceToPointBox(point, out closestPoint);
+                    return DistancePointToBox(point, out closestPoint);
                 case ColliderType.SphereCollider:
-                    return DistanceToPointSphere(point, out closestPoint);
+                    return DistancePointToSphere(point, out closestPoint);
                 case ColliderType.CapsuleCollider:
                     return DistanceToPointCapsule(point, out closestPoint);
                 default:
@@ -79,26 +81,28 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                     }
             }
         }
-        private float DistanceToPointSphere(Vector3 point, out Vector3 closestPoint)
+        private float DistancePointToSphere(Vector3 point, out Vector3 closestPoint)
         {
             var globalCenter = GetColliderGlobalCenter();
             Vector3 direction = (point - globalCenter).normalized;
-            closestPoint = globalCenter + direction * radius;
+            closestPoint = globalCenter + direction * radius * Mathf.Max(nodeScale.x, nodeScale.y, nodeScale.z);
             float distance = Vector3.Distance(closestPoint, point);
             return Mathf.Abs(distance);
         }
-        private float DistanceToPointBox(Vector3 point, out Vector3 closestPoint)
+        private float DistancePointToBox(Vector3 point, out Vector3 closestPoint)
         {
-            var globalCenter = GetColliderGlobalCenter();
-            Vector3 localPoint = point;
-            Vector3 halfSize = size * 0.5f;
-            Vector3 min = globalCenter - halfSize;
-            Vector3 max = globalCenter + halfSize;
+            Vector3 localPoint = InverseTransformPoint(point);
 
-            closestPoint = localPoint;
-            closestPoint.x = Mathf.Clamp(localPoint.x, min.x, max.x);
-            closestPoint.y = Mathf.Clamp(localPoint.y, min.y, max.y);
-            closestPoint.z = Mathf.Clamp(localPoint.z, min.z, max.z);
+            Vector3 scaledSize = Vector3.Scale(size, nodeScale);
+
+            Vector3 halfSize = scaledSize * 0.5f;
+            Vector3 min = halfSize;
+            Vector3 max = halfSize;
+
+            Vector3 closestPointLocal = localPoint;
+            closestPointLocal.x = Mathf.Clamp(localPoint.x, min.x, max.x);
+            closestPointLocal.y = Mathf.Clamp(localPoint.y, min.y, max.y);
+            closestPointLocal.z = Mathf.Clamp(localPoint.z, min.z, max.z);
 
             float sqrDist = 0.0f;
 
@@ -109,12 +113,13 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                 if (v < min[i]) sqrDist += (min[i] - v) * (min[i] - v);
                 if (v > max[i]) sqrDist += (v - max[i]) * (v - max[i]);
             }
-
+            closestPoint = TransformPoint(closestPointLocal);
             return Mathf.Sqrt(sqrDist);
         }
         private float DistanceToPointCapsule(Vector3 point, out Vector3 closestPoint)
         {
-            var globalCenter = GetColliderGlobalCenter();
+            Vector3 localPoint = InverseTransformPoint(point);
+
             Vector3 dir = Vector3.zero;
             switch (direction)
             {
@@ -129,37 +134,40 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                     break;
             }
 
-            float halfHeight = height * 0.5f - radius;
-            Vector3 lineStart = globalCenter - dir * halfHeight;
-            Vector3 lineEnd = globalCenter + dir * halfHeight;
+            float halfHeight = (height * nodeScale[direction]) * 0.5f - radius;
+            Vector3 lineStart = dir * halfHeight;
+            Vector3 lineEnd = dir * halfHeight;
 
-            Vector3 closestPointOnLine = ClosestPointOnLineSegment(lineStart, lineEnd, point);
-            Vector3 directionToPoint = (point - closestPointOnLine).normalized;
-            closestPoint = closestPointOnLine + directionToPoint * radius;
+            Vector3 closestPointOnLine = ClosestPointOnLineSegment(lineStart, lineEnd, localPoint);
+            Vector3 directionToPoint = (localPoint - closestPointOnLine).normalized;
+            var closestPointLocal = closestPointOnLine + directionToPoint * radius;
+            closestPoint = TransformPoint(closestPointLocal);
 
             float distance = Vector3.Distance(closestPoint, point);
             return Mathf.Max(0, distance - radius);
         }
         private bool IsPointInsideBox(Vector3 point)
         {
-            var globalCenter = GetColliderGlobalCenter();
-            Vector3 halfSize = size * 0.5f;
-            Vector3 min = globalCenter - halfSize;
-            Vector3 max = globalCenter + halfSize;
+            Vector3 localPoint = InverseTransformPoint(point);
 
-            return point.x >= min.x && point.x <= max.x &&
-                   point.y >= min.y && point.y <= max.y &&
-                   point.z >= min.z && point.z <= max.z;
+            Vector3 halfSize = size * 0.5f;
+            Vector3 min = -halfSize;
+            Vector3 max = halfSize;
+
+            return localPoint.x >= min.x && localPoint.x <= max.x &&
+                   localPoint.y >= min.y && localPoint.y <= max.y &&
+                   localPoint.z >= min.z && localPoint.z <= max.z;
         }
         private bool IsPointInsideSphere(Vector3 point)
         {
-            var globalCenter = GetColliderGlobalCenter();
-            float distanceSquared = (point - globalCenter).sqrMagnitude;
+            Vector3 localPoint = InverseTransformPoint(point);
+            float distanceSquared = (localPoint - center).sqrMagnitude;
             return distanceSquared <= radius * radius;
         }
         private bool IsPointInsideCapsule(Vector3 point)
         {
-            var globalCenter = GetColliderGlobalCenter();
+            Vector3 localPoint = InverseTransformPoint(point);
+
             Vector3 dir = Vector3.zero;
             switch (direction)
             {
@@ -174,12 +182,13 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
                     break;
             }
 
-            float halfHeight = height * 0.5f - radius;
-            Vector3 lineStart = globalCenter - dir * halfHeight;
-            Vector3 lineEnd = globalCenter + dir * halfHeight;
+            float halfHeight = (height * nodeScale[direction] * 0.5f) - radius;
 
-            Vector3 closestPoint = ClosestPointOnLineSegment(lineStart, lineEnd, point);
-            float distanceSquared = (point - closestPoint).sqrMagnitude;
+            Vector3 lineStart = - dir * halfHeight;
+            Vector3 lineEnd = dir * halfHeight;
+
+            Vector3 closestPoint = ClosestPointOnLineSegment(lineStart, lineEnd, localPoint);
+            float distanceSquared = (localPoint - closestPoint).sqrMagnitude;
             return distanceSquared <= radius * radius;
         }
         private Vector3 ClosestPointOnLineSegment(Vector3 start, Vector3 end, Vector3 point)
@@ -188,6 +197,29 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
             float t = Vector3.Dot(point - start, lineDir) / lineDir.sqrMagnitude;
             t = Mathf.Clamp01(t);
             return start + t * lineDir;
+        }
+
+        /// <summary>
+        /// Transform a point from world space to local space
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
+        private Vector3 InverseTransformPoint(Vector3 point)
+        {
+            Vector3 localPoint = Quaternion.Inverse(nodeRotation) * (point - nodePosition);
+            localPoint.x /= nodeScale.x;
+            localPoint.y /= nodeScale.y;
+            localPoint.z /= nodeScale.z;
+            return localPoint;
+        }
+        /// <summary>
+        /// Transform a point from local space to world space
+        /// </summary>
+        /// <param name="point"></param>
+        /// <returns></returns>
+        private Vector3 TransformPoint(Vector3 point)
+        {
+            return nodePosition + nodeRotation * Vector3.Scale(point, nodeScale);
         }
         #endregion
     }

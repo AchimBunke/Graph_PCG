@@ -1,4 +1,5 @@
 using Achioto.Gamespace_PCG.Runtime.Graph.Runtime;
+using Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services;
 using Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space;
 using Newtonsoft.Json;
 using System;
@@ -31,9 +32,9 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Services
             JSON,
             XML
         }
-        public static void SerializeToFile(HGraph graph, string filePath)
+        public static void SerializeToFile(HGraph graph, string filePath, bool forceIncludeModules)
         {
-            var serializedData = SerializeToData(graph);
+            var serializedData = SerializeToData(graph, forceIncludeModules);
             SerializeToFile(serializedData, filePath);
         }
         public static void SerializeToFile(PCGGraph graph, string filePath)
@@ -122,17 +123,21 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Services
             }
             return serializedData;
         }
-        public static HGraphData SerializeToData(HGraph graph)
+        public static HGraphData SerializeToData(HGraph graph, bool forceIncludeModules = true)
         {
             var data = new HGraphData();
             data.enumData = new List<HGraphEnumData>();
             foreach (var d in graph.EnumDefinitions.Values)
             {
+                if (!forceIncludeModules && PCGGraphModuleManager.IsModuleEnum(d.HGraphId.Value) && !PCGGraphModuleManager.SerializeModuleEnum(d.HGraphId.Value))
+                    continue;
                 data.enumData.Add(Serialize(d));
             }
             data.categories = new List<HGraphCategoryData>();
             foreach (var c in graph.Categories.Values)
             {
+                if (!forceIncludeModules && PCGGraphModuleManager.IsModuleCategory(c.HGraphId.Value) && !PCGGraphModuleManager.SerializeModuleCategory(c.HGraphId.Value))
+                    continue;
                 data.categories.Add(Serialize(c));
             }
             data.nodes = new List<HGraphNodeData>();

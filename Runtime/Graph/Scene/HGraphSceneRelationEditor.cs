@@ -91,7 +91,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
             );
             if (relation.RelationData.Value != null)
             {
-                disposable.Add(relation.RelationData.Value.AttributeRelations.ObserveAnyChange().Subscribe(_ =>
+                disposable.Add(relation.RelationData.Value.AttributeRelations.ObserveAnyChange().ThrottleFrame(1).Subscribe(_ =>
                 {
                     RebuildAttributeRelations(currentInspector);
                     UpdateNewAttributeRelationDropDownOptions(currentInspector);

@@ -1,10 +1,14 @@
 using Achioto.Gamespace_PCG.Runtime.Graph.Services;
+using System;
 using UnityEditor.SceneManagement;
+using UnityEngine;
 
 namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
 {
     public class HGraphSceneNode_Autoconnect : HGraphSceneNode
     {
+        [SerializeField] HGraphSceneNode _autoconnectSuperNode;
+        public HGraphSceneNode AutoconnectSuperNode => _autoconnectSuperNode;
         protected override void OnEnable()
         {
             base.OnEnable();
@@ -27,6 +31,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
                 //Debug.Log("Node not connected to graph.. creating new node");
                 ConnectAsNewNode();
                 NodeData.Value.Name.Value = name;
+                if (_autoconnectSuperNode != null)
+                    NodeData.Value.SuperNode.Value = _autoconnectSuperNode.HGraphId.Value;
             }
         }
         protected override void OnValidate()

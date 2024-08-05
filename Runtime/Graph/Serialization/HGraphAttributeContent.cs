@@ -252,6 +252,10 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Serialization
         {
             throw new InvalidOperationException("Cannot reconstruct EnumAttributeContent");
         }
+        public override HGraphAttributeContent Copy()
+        {
+            return new FlagsEnumHGraphAttribute { Value = this.Value, Enum = this.Enum };
+        }
     }
 
     [Serializable]

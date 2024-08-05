@@ -15,6 +15,54 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services
     public static class PCGGraphModuleManager
     {
         const string prefix = "pcg:";
+        static Dictionary<Type, PCGModule> modules = new Dictionary<Type, PCGModule>();
+        static Dictionary<string, PCGAttributeModule> attributeModules = new Dictionary<string, PCGAttributeModule>();
+        static Dictionary<string, PCGEnumModule> enumModules = new Dictionary<string, PCGEnumModule>();
+        class PCGModule
+        {
+            public Type Type { get; set; }
+            public string NamespaceName { get; set; }
+            public bool RegisterAllMembers { get; set; }
+            public PCGModuleSerializationMode SerializationMode {  get; set; }
+            public Dictionary<string, PCGAttributeModule> Attributes { get; set; } = new Dictionary<string, PCGAttributeModule>();
+            public PCGModule(string namespaceName, bool registerAllMembers, Type type, PCGModuleSerializationMode serializationMode) 
+            {
+                Type = type;
+                NamespaceName = namespaceName;
+                RegisterAllMembers = registerAllMembers;
+                SerializationMode = serializationMode;
+            }
+        }
+        class PCGAttributeModule
+        {
+            public string Name { get; set; }
+            public string CategoryId { get; set; }
+            public object DefaultValue {  get; set; }
+            public PCGModuleSerializationMode SerializationMode { get; set; }
+            public PCGAttributeModule(string categoryId, string name, object defaultValue, PCGModuleSerializationMode serializationMode)
+            {
+                CategoryId = categoryId;
+                Name = name;
+                DefaultValue = defaultValue;
+                SerializationMode = serializationMode;
+            }
+        }
+        class PCGEnumModule
+        {
+            public string EnumId { get; set; }
+            public PCGModuleSerializationMode SerializationMode { get; set; }
+            public PCGEnumModule(string enumId, PCGModuleSerializationMode serializationMode) 
+            {  
+                SerializationMode = serializationMode; 
+                EnumId = enumId;
+            }
+        }
+
+        public static bool IsModuleCategory(string categoryName) => attributeModules.ContainsKey(categoryName);
+        public static bool IsModuleEnum(string enumName) => enumModules.ContainsKey(enumName);
+        public static bool SerializeModuleCategory(string categoryName) => attributeModules[categoryName].SerializationMode == PCGModuleSerializationMode.Serialize;
+        public static bool SerializeModuleEnum(string enumName) => enumModules[enumName].SerializationMode == PCGModuleSerializationMode.Serialize;
+
         /// <summary>
         /// Load all modules within an assembly into the current HGraph.
         /// </summary>
@@ -31,6 +79,12 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services
         {
             var att = type.GetCustomAttribute<PCGGraphModuleAttribute>();
             var namespaceName = att.namespaceName;
+            if (!modules.TryGetValue(type, out var pcgModule))
+            {
+                pcgModule = new PCGModule(namespaceName, att.registerAllMembers, type, att.serializationMode);
+                modules.Add(type, pcgModule);
+            }
+
             foreach (var member in
                 type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance)
                 .Where(m => att.registerAllMembers || m.IsDefined(typeof(PCGGraphAttributeAttribute), true))
@@ -49,7 +103,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services
                     else
                         instance = Activator.CreateInstance(type);
                 }
-                LoadMember(member, namespaceName, instance);
+
+                LoadMember(member, namespaceName, instance, pcgModule);
             }
         }
         private static bool IsStruct(Type type)
@@ -61,7 +116,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services
             var namespacePart = string.IsNullOrWhiteSpace(namespaceName) ? "" : (namespaceName + ":");
             return prefix + namespacePart + memberName;
         }
-        private static void LoadMember(MemberInfo memberInfo, string namespaceName, object instance)
+        private static void LoadMember(MemberInfo memberInfo, string namespaceName, object instance, PCGModule module)
         {
             var att = memberInfo.GetCustomAttribute<PCGGraphAttributeAttribute>();
             var providedName = att?.name;
@@ -69,12 +124,22 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services
             var categoryName = MemberToAttributeName(targetName, namespaceName);
 
             if (HGraph.Instance.Categories.ContainsKey(categoryName))
+            {
+                //Debug.LogError($"Cannot register module {memberInfo.DeclaringType}.{memberInfo.Name} for category {categoryName} because the category already exists.");
                 return;
+            }
+            var serializationMode = att?.serializationMode ?? module.SerializationMode;
+            if (!attributeModules.TryGetValue(categoryName, out var pcgAttribute))
+            {
+                pcgAttribute = new PCGAttributeModule(categoryName, providedName, att?.defaultValue, serializationMode);
+                module.Attributes.Add(categoryName, pcgAttribute);
+                attributeModules.Add(categoryName, pcgAttribute);
+            }
 
             var (categoryType, defaultValue) = GetAttributeType(memberInfo, instance);
             if (categoryType == HGraphAttributeType.Enum || categoryType == HGraphAttributeType.FlagsEnum)
             {
-                var enumName = LoadEnum(memberInfo, targetName);
+                var enumName = LoadEnum(memberInfo, targetName, serializationMode);
                 defaultValue = Tuple.Create(enumName, Convert.ToInt32(defaultValue));
             }
             float min = float.NaN;
@@ -178,7 +243,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services
             }
 
         }
-        private static string LoadEnum(MemberInfo enumMember, string enumName)
+        private static string LoadEnum(MemberInfo enumMember, string enumName, PCGModuleSerializationMode serializationMode)
         {
             Type memberType;
             if (enumMember is PropertyInfo pinfo)
@@ -195,7 +260,16 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services
                 throw new ArgumentException("Cannot parse MemberInfo!");
 
             if (HGraph.Instance.EnumDefinitions.ContainsKey(enumName))
+            {
+                //Debug.LogError($"Cannot register module {enumMember.DeclaringType}.{enumMember.Name} for enum {enumName} because the enum already exists.");
                 return enumName;
+            }
+            if (!enumModules.TryGetValue(enumName, out var pcgEnum))
+            {
+                pcgEnum = new PCGEnumModule(enumName, serializationMode);
+                enumModules.Add(enumName, pcgEnum);
+            }
+           
 
             var hEnum = HGraphEnum.Construct(enumName);
             string[] enumNames = Enum.GetNames(memberType);

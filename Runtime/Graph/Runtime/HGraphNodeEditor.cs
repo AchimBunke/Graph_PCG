@@ -1,4 +1,5 @@
 ﻿using UnityEditor;
+using UnityEngine.UIElements;
 
 namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
 {
@@ -12,7 +13,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
         }
         public override UnityEngine.UIElements.VisualElement CreateInspectorGUI()
         {
-            return null;
+            return new Label("Missing Inspector");
         }
     }
 }

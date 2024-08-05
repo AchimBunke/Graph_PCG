@@ -7,11 +7,14 @@
             <ui:Button text="Open File..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="PathButton" style="max-width: 150px; flex-grow: 1;" />
             <ui:Button text="New" parse-escape-sequences="true" display-tooltip-when-elided="true" name="NewGraphButton" style="max-width: 150px;" />
         </ui:VisualElement>
-        <ui:Toggle label="Keep Graph" name="KeepGraphToggle" />
-        <ui:Toggle label="Load Update" name="LoadUpdateToggle" />
+        <ui:Toggle label="Keep Graph" name="KeepGraphToggle" tooltip="Do not unload the current loaded graph when loading a new one." />
+        <ui:Toggle label="Load Update" name="LoadUpdateToggle" tooltip="Update values in current graph instead of overwriting." />
         <ui:Button text="Load Graph" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoadGraphButton" />
         <ui:Button text="Load Graph for open Scene" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoadGraphForCurrentScene" />
-        <ui:Button text="Save Graph" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SaveGraphButton" />
+        <ui:VisualElement style="flex-direction: row;">
+            <ui:Button text="Save Graph" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SaveGraphButton" style="flex-grow: 1; flex-shrink: 1;" />
+            <ui:Toggle name="Save_Modules" text="Save Module" value="false" tooltip="Serialize categories and enums loaded from PCGModules." style="flex-shrink: 1; flex-grow: 0;" />
+        </ui:VisualElement>
         <ui:Foldout text="Categories" name="CategoriesFoldout" style="flex-shrink: 0;" />
         <ui:VisualElement style="border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; flex-shrink: 0;">
             <ui:EnumField label="New Category Type" type="Achioto.Gamespace_PCG.Runtime.Graph.Serialization.HGraphAttributeType, achioto.gamespace-pcg" name="NewCategoryTypePopup" />

@@ -22,6 +22,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
                 .Merge(Rules.Select(_=>Unit.Default))
                 .Subscribe(_ => PCGGraphManager.Instance.SetPCGGraphDirty());
         }
+        
+
         public ReactiveDictionary<string, HGraphEnum> EnumDefinitions { get; } = new();
         public ReactiveDictionary<string, HGraphNode> Nodes { get; } = new();
         public ReactiveDictionary<string, HGraphCategory> Categories { get; } = new();

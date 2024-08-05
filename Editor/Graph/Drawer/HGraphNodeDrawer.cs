@@ -1,4 +1,5 @@
-﻿using Achioto.Gamespace_PCG.Runtime.Graph.Scene;
+﻿using Achioto.Gamespace_PCG.Runtime.Graph.Runtime;
+using Achioto.Gamespace_PCG.Runtime.Graph.Scene;
 using Achioto.Gamespace_PCG.Runtime.Graph.Services;
 using Achioto.Gamespace_PCG.Runtime.Graph.Settings;
 using System;
@@ -11,7 +12,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityUtilities.Reactive;
 
-namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
+namespace Achioto.Gamespace_PCG.Editor.Graph.Drawer
 {
     [CustomPropertyDrawer(typeof(HGraphNode))]
     public class HGraphNodeDrawer : PropertyDrawer, IDisposable
@@ -100,7 +101,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Runtime
                         superNodeObjectField.SetValueWithoutNotify(null);
                     superNodeTextField.SetValueWithoutNotify(newSuperNode);
                 }),
-                hNode.Attributes.ObserveAnyChange().Subscribe(_ => RefreshAttributes(inspector, hNode))
+                hNode.Attributes.ObserveAnyChange().ThrottleFrame(1).Subscribe(_ => RefreshAttributes(inspector, hNode))
             );
 
 

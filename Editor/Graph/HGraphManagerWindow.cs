@@ -6,6 +6,7 @@ using Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Services;
 using Achioto.Gamespace_PCG.Runtime.Graph.Services;
 using Achioto.Gamespace_PCG.Runtime.Graph.Settings;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UniRx;
@@ -27,21 +28,21 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
         public static void ShowWindow()
         {
             EditorWindow.GetWindow<HGraphManagerWindow>("HGraph");
+           
         }
 
-        string graphFilePath;
+        string graphFilePath="";
         string currentGraphDirectoryPath = "";
-        //bool isCurrentGraphJsonLoaded = false;
-        //private bool categoryFoldout = false;
-        string newCategoryName;
-        string newEnumName;
-        string newRuleName;
-        HGraphAttributeType newCategoryType;
+        
+        string newCategoryName="";
+        string newEnumName="";
+        HGraphAttributeType newCategoryType = HGraphAttributeType.Nominal;
 
         bool keepCurrentGraph = false;
         bool loadUpdate = false;
 
         IDisposable disposable;
+        bool saveModules = false;
 
         private void CreateGUI()
         {
@@ -63,6 +64,10 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
             rootVisualElement.Q<Toggle>("LoadUpdateToggle").RegisterValueChangedCallback(v =>
             {
                 loadUpdate = v.newValue;
+            });
+            rootVisualElement.Q<Toggle>("Save_Modules").RegisterValueChangedCallback(v =>
+            {
+                saveModules = v.newValue;
             });
             var loadGraphButton = rootVisualElement.Q<Button>("LoadGraphButton");
             var saveGraphButton = rootVisualElement.Q<Button>("SaveGraphButton");
@@ -102,11 +107,13 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
             };
             saveGraphButton.clicked += () =>
             {
-                HGraphSerializationController.SerializeToFile(HGraph.Instance, graphFilePath);
+                HGraphSerializationController.SerializeToFile(HGraph.Instance, graphFilePath, saveModules);
                 PCGGraphManager.Instance.SetPCGGraphDirty();
                 HGraphSerializationController.SerializeToFile(PCGGraphManager.Instance.PCGGraph, Path.ChangeExtension(graphFilePath, ".pcg.json"));
             };
+// ERROR IN CATEGORIES !!! 
             UpdateCategoriesFoldout(rootVisualElement.Q("CategoriesFoldout"));
+            EditorSceneManager.sceneOpened += (_,_)=> UpdateCategoriesFoldout(rootVisualElement.Q("CategoriesFoldout"));
 
             var newCatButton = rootVisualElement.Q<Button>("NewCategoryButton");
             rootVisualElement.Q<EnumField>("NewCategoryTypePopup").RegisterValueChangedCallback(v =>
@@ -136,6 +143,7 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
                 newCategoryName = v.newValue;
                 UpdateCreateCategoryButtonState();
             });
+
             rootVisualElement.Q<TextField>("NewEnumField").RegisterValueChangedCallback(v =>
             {
                 newEnumName = v.newValue;
@@ -155,16 +163,16 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
                 HGraph.Instance.Rules.Value = v.newValue as HGraphRuleCollection;
             });
 
-
             disposable = new CompositeDisposable(
-                HGraph.Instance.Categories.ObserveAnyChange().Subscribe(_ =>
+                HGraph.Instance.Categories.ObserveAnyChange().ThrottleFrame(1).Subscribe(_ =>
                 {
                     UpdateCategoriesFoldout(rootVisualElement.Q("CategoriesFoldout"));
                     UpdateCreateCategoryButtonState();
                 }),
-                 HGraph.Instance.EnumDefinitions.ObserveAnyChange().Subscribe(_ =>
+                 HGraph.Instance.EnumDefinitions.ObserveAnyChange().ThrottleFrame(1).Subscribe(_ =>
                  {
                      UpdateEnumFoldout(rootVisualElement.Q("EnumFoldout"));
+                     //UpdateCategoriesFoldout(rootVisualElement.Q("CategoriesFoldout"));
                      UpdateCreateEnumButtonState();
                  }),
                  HGraph.Instance.Rules.Subscribe(v =>
@@ -214,19 +222,21 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
         }
         private void UpdateCategoriesFoldout(VisualElement foldout)
         {
-            while (foldout.childCount > 0)
-                foldout.RemoveAt(0);
+            foldout.Clear();
             for (int i = 0; i < HGraph.Instance.Categories.Count; ++i)
             {
                 var categoryKV = HGraph.Instance.Categories.ElementAt(i);
+
                 var categorySO = ScriptableObject.CreateInstance<HGraphCategorySO>();
                 categorySO.Category = categoryKV.Value;
+
                 var serializedCategory = new SerializedObject(categorySO);
-                serializedCategory.Update();
                 var catProp = serializedCategory.FindProperty(nameof(HGraphCategorySO.Category));
-                var pf = new PropertyField(catProp, categoryKV.Value.Name.Value);
-                pf.BindProperty(catProp);
-                foldout.Add(pf);
+
+                var propertyField = new PropertyField(catProp, categoryKV.Key);
+                propertyField.BindProperty(catProp);
+                foldout.Add(propertyField);
+
             }
         }
         private void UpdateEnumFoldout(VisualElement foldout)
@@ -264,7 +274,7 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
         private void CreateNewGraphFromCurrentScene()
         {
             graphFilePath = HGraphUtility.CreateGraphFilePathFromCurrentEditorScene();
-            HGraphSerializationController.SerializeToFile(HGraph.Instance, graphFilePath);
+            HGraphSerializationController.SerializeToFile(HGraph.Instance, graphFilePath, saveModules);
             PCGGraphManager.Instance.SetPCGGraphDirty();
             HGraphSerializationController.SerializeToFile(PCGGraphManager.Instance.PCGGraph, Path.ChangeExtension(graphFilePath, ".pcg.json"));
             AssetDatabase.Refresh();
@@ -274,6 +284,7 @@ namespace Achioto.Gamespace_PCG.Editor.Graph
             var data = HGraphSerializationController.DeserializeFromFile(graphFilePath);
             HGraphController.Load(data, keepCurrentGraph, loadUpdate);
         }
+
     }
 
 }

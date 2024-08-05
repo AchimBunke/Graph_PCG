@@ -17,18 +17,18 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.PCG.Generator
 #if UNITY_EDITOR
 
 #endif
-        [SerializeField] protected bool _allowAutoInvocation = true;// allow auto triggering
+        [SerializeField,Tooltip("Allows automatic triggering.")] protected bool _allowAutoInvocation = true;// allow auto triggering
         public bool AllowAutoInvocation => _allowAutoInvocation;
-        [SerializeField] protected bool _allowHierarchicalInvocation = true;// Can be called by other generators
+        [SerializeField,Tooltip("Allows triggering by generators on parent nodes.")] protected bool _allowHierarchicalInvocation = true;// Can be called by other generators
         public bool AllowHierarchicalInvocation => _allowHierarchicalInvocation;
-        [SerializeField] protected bool _allowHierarchicalDelegation = true;// Calls other generators
+        [SerializeField, Tooltip("Triggers other generators within child nodes.")] protected bool _allowHierarchicalDelegation = true;// Calls other generators
         public bool AllowHierarchicalDelegation => _allowHierarchicalDelegation;
-        [SerializeField] protected bool _isContentLocked = false;// can generate
+        [SerializeField, Tooltip("Prevents content changes.")] protected bool _isContentLocked = false;// can generate
         public bool IsContentLocked => _isContentLocked;
-        [SerializeField] protected string[] _generatorTypes = new string[0];// decides which sub-generators to call/if being called
+        [SerializeField, Tooltip("Types for which this generator is triggered.")] protected string[] _generatorTypes = new string[0];// decides which sub-generators to call/if being called
         public string[] GeneratorTypes => _generatorTypes;
 
-        [SerializeField] protected HGraphGenerationOrder _generationOrder = HGraphGenerationOrder.Last;
+        [SerializeField, Tooltip("Generate before child generators or after.")] protected HGraphGenerationOrder _generationOrder = HGraphGenerationOrder.Last;
         public HGraphGenerationOrder GenerationOrder => _generationOrder;
 
         private void HierarchicalGeneratorDelegation(HGraphNode node, string[] generationTypes, Action<HGraphGenerator> generatorTask, bool prepare)

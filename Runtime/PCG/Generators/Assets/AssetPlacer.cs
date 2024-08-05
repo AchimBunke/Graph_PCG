@@ -74,8 +74,9 @@ namespace Achioto.Gamespace_PCG.Runtime.PCG.Generators.Assets
                 return position + (rotation * Settings.offset);
             }
         }
-
-        [PCGGraphModule(registerAllMembers: true)]
+#if USE_HGRAPH_MODULES
+        [PCGGraphModule(registerAllMembers: true, serializationMode: PCGModuleSerializationMode.None)]
+#endif
         [Serializable]
         public struct AssetPlacerSettings
         {

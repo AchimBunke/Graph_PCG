@@ -71,16 +71,18 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
             //            _target.Relations.Add(this);
             //        if (!_source?.Relations?.Contains(this) ?? false)
             //            _source.Relations.Add(this);
-
-            _relationData.Subscribe(OnRelationDataChanged);
+            disableDisposables = new CompositeDisposable
+            {
+                _relationData.Subscribe(OnRelationDataChanged)
+            };
 
             base.OnEnable();
             var hgraph = HGraph.Instance;
-            _relationChangedSubscriber = hgraph.Relations.ObserveAdd().Where(kv => kv.Key == HGraphId.Value).Select(kv => kv.Value).Merge(
+            disableDisposables.Add(hgraph.Relations.ObserveAdd().Where(kv => kv.Key == HGraphId.Value).Select(kv => kv.Value).Merge(
                      hgraph.Relations.ObserveRemove().Where(kv => kv.Key == HGraphId.Value).Select(_ => (HGraphRelation)null),
                      hgraph.Relations.ObserveReplace().Where(kv => kv.Key == HGraphId.Value).Select(_ => (HGraphRelation)null),
                      hgraph.Relations.ObserveReset().Select(_ => (HGraphRelation)null))
-                 .Subscribe(SetRelationData);
+                 .Subscribe(SetRelationData));
 
         }
         protected override void OnHGraphIdChanged(string oldId, string newId)
@@ -112,10 +114,10 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
             }
             _isDuplicate.Value = false;
         }
-        IDisposable _relationChangedSubscriber;
+        CompositeDisposable disableDisposables;
         private void DisposeSubscribers()
         {
-            _relationChangedSubscriber?.Dispose();
+            disableDisposables?.Dispose();
         }
         private void SetRelationData(HGraphRelation data)
         {
@@ -149,15 +151,19 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
 
 
 
-#if UNITY_EDITOR
+
 
         private void OnDisable()
         {
+#if UNITY_EDITOR
             if (Application.isPlaying)
                 return;
             // Enabling will disable LineRenderer
             lineRenderer.enabled = false;
+#endif
+            DisposeSubscribers();
         }
+#if UNITY_EDITOR
         public void HideLine()
         {
             lineRenderer.enabled = false;

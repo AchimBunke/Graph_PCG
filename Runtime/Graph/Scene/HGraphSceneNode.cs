@@ -120,14 +120,21 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
         {
             base.OnEnable();
             NodeSpace = GetComponent<HGraphNodeSpace>();
-            NodeData.Subscribe(OnNodeDataChanged);
+            disableDisposables = new CompositeDisposable
+            {
+                NodeData.Subscribe(OnNodeDataChanged)
+            };
             // HGraph Initialization
             var hgraph = HGraph.Instance;
-            _nodeChangedSubscriber = hgraph.Nodes.ObserveAdd().Where(kv => kv.Key == HGraphId.Value).Select(kv => kv.Value).Merge(
+            disableDisposables.Add(hgraph.Nodes.ObserveAdd().Where(kv => kv.Key == HGraphId.Value).Select(kv => kv.Value).Merge(
                     hgraph.Nodes.ObserveRemove().Where(kv => kv.Key == HGraphId.Value).Select(_ => (HGraphNode)null),
                     hgraph.Nodes.ObserveReplace().Where(kv => kv.Key == HGraphId.Value).Select(kv => kv.NewValue),
                     hgraph.Nodes.ObserveReset().Select(_ => (HGraphNode)null))
-                .Subscribe(SetNodeData);
+                .Subscribe(SetNodeData));
+        }
+        private void OnDisable()
+        {
+            DisposeSubscribers();
         }
         protected override void OnHGraphIdChanged(string oldId, string newId)
         {
@@ -160,10 +167,10 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene
             _isDuplicate.Value = false;
         }
 
-        IDisposable _nodeChangedSubscriber;
+        CompositeDisposable disableDisposables;
         private void DisposeSubscribers()
         {
-            _nodeChangedSubscriber?.Dispose();
+            disableDisposables?.Dispose();
         }
 
         CompositeDisposable _nodeDataSubscriber;

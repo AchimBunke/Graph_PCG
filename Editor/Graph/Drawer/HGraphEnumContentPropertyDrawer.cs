@@ -154,7 +154,13 @@ namespace Achioto.Gamespace_PCG.Editor.Graph.Drawer
                 valueSelector = valueField;
                 valueField.choices = GetValueOptions(property);
                 valueField.index = valueProperty.intValue;
-                valueField.BindProperty(valueProperty);
+
+                valueField.RegisterValueChangedCallback(v =>
+                {
+                    valueProperty.intValue = valueField.index;
+                    valueProperty.serializedObject.ApplyModifiedProperties();
+                });
+
                 container.Add(valueField);
             }
         }

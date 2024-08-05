@@ -67,6 +67,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Settings
                     EditorGUILayout.PropertyField(settings.FindProperty("hGraphManagerWindow"), new GUIContent("HGraphManagerWindow"));
                     EditorGUILayout.PropertyField(settings.FindProperty("hGraphAssetRecommenderWindow"), new GUIContent("HGraphAssetRecommenderWindow"));
                     EditorGUILayout.PropertyField(settings.FindProperty("hGraphAssetManagerWindow"), new GUIContent("HGraphAssetManagerWindow"));
+                    EditorGUILayout.PropertyField(settings.FindProperty("autoUpdatePCGGraph"), new GUIContent("Auto Update PCGGraph","Marks the PCGGraph as dirty each few seconds to allow generation with latest data."));
 
 
                     EditorGUILayout.PropertyField(settings.FindProperty("edgeColors"), new GUIContent("Edge Colors"), true);

@@ -47,6 +47,10 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Settings
         private Texture2D hasUserDataIcon;
         public Texture2D HasUserDataIcon => hasUserDataIcon;
 
+        [SerializeField]
+        private bool autoUpdatePCGGraph = true;
+        public bool AutoUpdatePCGGraph => autoUpdatePCGGraph;
+
         [Serializable]
         public struct StringColor
         {
@@ -77,6 +81,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Settings
                 instance.hGraphManagerWindow = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(HGraphSettingsData.k_HGraphManagerWindowPath);
                 instance.hGraphAssetRecommenderWindow = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(HGraphSettingsData.k_HGraphAssetRecommenderWindowPath);
                 instance.hasUserDataIcon = AssetDatabase.LoadAssetAtPath<Texture2D>(HGraphSettingsData.k_HGraphHasUserDataIconPath);
+
 
                 AssetDatabase.CreateAsset(instance, HGraphSettingsData.k_HGraphSettingsAssetPath);
                 AssetDatabase.SaveAssets();

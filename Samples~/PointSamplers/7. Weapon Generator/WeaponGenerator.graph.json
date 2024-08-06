@@ -1,0 +1,582 @@
+{
+  "enumData": [],
+  "categories": [],
+  "nodes": [
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.44512892,
+          "y": 0.5,
+          "z": 0.114317596
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-9470"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-9470",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.194129,
+          "y": 1.049,
+          "z": 0.908383965
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-9498"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-9470",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.194129,
+          "y": 1.049,
+          "z": -0.341615975
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-9520"
+    },
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": true,
+        "nodePosition": {
+          "x": -2.55252767,
+          "y": 3.40117264,
+          "z": -0.1456331
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Level"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28896"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28896",
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28924"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28896",
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28946"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28990"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28990",
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-29018"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28990",
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-29040"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-29374"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.43418407,
+          "y": 0.499999523,
+          "z": 2.97305727
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29390"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29390",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.18318415,
+          "y": 1.04899955,
+          "z": 3.7671237
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29418"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29390",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.18318415,
+          "y": 1.04899955,
+          "z": 2.5171237
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29440"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.1222744,
+          "y": 0.499999523,
+          "z": -2.95249176
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29568"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29568",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.608297348,
+          "y": 1.04899955,
+          "z": -2.27623415
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29596"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29568",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -0.393218756,
+          "y": 1.04899955,
+          "z": -3.02420855
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29618"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.22252774,
+          "y": 0.5000005,
+          "z": -2.905633
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29792"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29792",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -2.40523458,
+          "y": 1.0490005,
+          "z": -3.06555319
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29820"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29792",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.502581,
+          "y": 1.0490005,
+          "z": -2.46694565
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29842"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 2,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.53252769,
+          "y": 0.5,
+          "z": 3.1843667
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-31542"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-31542",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.537626,
+          "y": 1.049,
+          "z": 4.01714325
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-31570"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-31542",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.907067,
+          "y": 1.049,
+          "z": 2.82298517
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-31592"
+    },
+    {
+      "name": "Cube",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-139792"
+    },
+    {
+      "name": "Cube",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-141622"
+    }
+  ],
+  "relations": [],
+  "rulesGUID": ""
+}

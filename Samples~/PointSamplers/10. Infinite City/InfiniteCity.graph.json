@@ -1,0 +1,100 @@
+{
+  "enumData": [],
+  "categories": [],
+  "nodes": [
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Map"
+    },
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:wfc:ManyFountains",
+          "type": "Boolean",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+            "Value": true,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 11.0,
+          "y": -4.26,
+          "z": 3.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 10.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 15.0,
+          "y": 20.0,
+          "z": 15.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Many Fountains"
+    }
+  ],
+  "relations": [],
+  "rulesGUID": ""
+}

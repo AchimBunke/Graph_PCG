@@ -1,0 +1,208 @@
+{
+  "enumData": [],
+  "categories": [],
+  "nodes": [
+    {
+      "name": "Node",
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -2.8,
+          "y": 0.0,
+          "z": 1.3
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-41876"
+    },
+    {
+      "name": "Node (1)",
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 50.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 19.29,
+          "y": 0.0,
+          "z": 1.29999924
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-41908"
+    },
+    {
+      "name": "Node (4)",
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 80.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -12.25,
+          "y": 0.0,
+          "z": 24.8
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-41962"
+    },
+    {
+      "name": "Node (3)",
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 20.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -22.4,
+          "y": 0.0,
+          "z": -12.07
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-41984"
+    },
+    {
+      "name": "Node (2)",
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 5.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 3.6,
+          "y": 0.0,
+          "z": -23.65
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "38946"
+    }
+  ],
+  "relations": [],
+  "rulesGUID": ""
+}

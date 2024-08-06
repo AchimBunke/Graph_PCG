@@ -1,0 +1,78 @@
+{
+  "enumData": [],
+  "categories": [
+    {
+      "name": "Temperature",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": -100.0,
+      "maxValue": 100.0,
+      "id": "Temperature"
+    }
+  ],
+  "nodes": [
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": -10.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 10.0,
+          "y": 10.0,
+          "z": 10.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Node"
+    }
+  ],
+  "relations": [],
+  "rulesGUID": ""
+}

@@ -1,0 +1,728 @@
+{
+  "enumData": [
+    {
+      "Entries": [
+        {
+          "Name": "None",
+          "Value": 0
+        },
+        {
+          "Name": "HideInHierarchy",
+          "Value": 1
+        },
+        {
+          "Name": "HideInInspector",
+          "Value": 2
+        },
+        {
+          "Name": "DontSaveInEditor",
+          "Value": 4
+        },
+        {
+          "Name": "NotEditable",
+          "Value": 8
+        },
+        {
+          "Name": "DontSaveInBuild",
+          "Value": 16
+        },
+        {
+          "Name": "DontUnloadUnusedAsset",
+          "Value": 32
+        },
+        {
+          "Name": "DontSave",
+          "Value": 52
+        },
+        {
+          "Name": "HideAndDontSave",
+          "Value": 61
+        }
+      ],
+      "Flags": true,
+      "id": "contentFlags"
+    },
+    {
+      "Entries": [
+        {
+          "Name": "Sword",
+          "Value": 0
+        },
+        {
+          "Name": "Staff",
+          "Value": 1
+        },
+        {
+          "Name": "Shield",
+          "Value": 2
+        }
+      ],
+      "Flags": false,
+      "id": "WeaponType"
+    }
+  ],
+  "categories": [
+    {
+      "name": "pcg:CarveHeightmaps",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:CarveHeightmaps"
+    },
+    {
+      "name": "pcg:epsilon",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 10.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:epsilon"
+    },
+    {
+      "name": "pcg:randomizeRotation",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": true,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeRotation"
+    },
+    {
+      "name": "pcg:randomizeTilt",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeTilt"
+    },
+    {
+      "name": "pcg:maxAssetTiltAngle",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": 0.0,
+      "maxValue": 360.0,
+      "id": "pcg:maxAssetTiltAngle"
+    },
+    {
+      "name": "pcg:contentFlags",
+      "type": "FlagsEnum",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FlagsEnumHGraphAttribute, achioto.gamespace-pcg",
+        "Enum": "contentFlags",
+        "Value": 0,
+        "FeatureVectorLength": 16
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:contentFlags"
+    },
+    {
+      "name": "pcg:randomizeScale",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeScale"
+    },
+    {
+      "name": "pcg:minScale",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:minScale"
+    },
+    {
+      "name": "pcg:maxScale",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:maxScale"
+    },
+    {
+      "name": "pcg:absolutRotation",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:absolutRotation"
+    },
+    {
+      "name": "pcg:offset",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:offset"
+    },
+    {
+      "name": "pcg:Difficulty",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:Difficulty"
+    },
+    {
+      "name": "pcg:wfc:DisallowRoofs",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:DisallowRoofs"
+    },
+    {
+      "name": "pcg:wfc:ManyFountains",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:ManyFountains"
+    },
+    {
+      "name": "pcg:WeaponType",
+      "type": "Enum",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+        "Enum": "WeaponType",
+        "Value": 0,
+        "FeatureVectorLength": 16
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:WeaponType"
+    },
+    {
+      "name": "Temperature",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": -100.0,
+      "maxValue": 100.0,
+      "id": "Temperature"
+    }
+  ],
+  "nodes": [
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": true,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "World"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 8.309999,
+          "y": 1.96,
+          "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 1"
+    },
+    {
+      "name": null,
+      "superNode": "Area 1",
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 9.53,
+          "y": 0.87,
+          "z": -1.7
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-139792"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 50.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.9100001,
+          "y": 1.96,
+          "z": -5.39000034
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "CapsuleCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.5,
+        "height": 2.0,
+        "direction": 1
+      },
+      "id": "Area 2"
+    },
+    {
+      "name": null,
+      "superNode": "Area 2",
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 50.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.9100001,
+          "y": 1.21,
+          "z": -7.00000048
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-141622"
+    },
+    {
+      "name": null,
+      "superNode": "Area 2",
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 100.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 50.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.9100001,
+          "y": 1.96,
+          "z": -9.85
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Sub Area 2.2"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": -25.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -6.20999956,
+          "y": 1.35,
+          "z": -0.799999952
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "SphereCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.5,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 3"
+    }
+  ],
+  "relations": [],
+  "rulesGUID": ""
+}

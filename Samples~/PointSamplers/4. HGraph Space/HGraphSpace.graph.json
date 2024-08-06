@@ -1,0 +1,438 @@
+{
+  "enumData": [
+    {
+      "Entries": [
+        {
+          "Name": "None",
+          "Value": 0
+        },
+        {
+          "Name": "First",
+          "Value": 1
+        },
+        {
+          "Name": "Second",
+          "Value": 2
+        }
+      ],
+      "Flags": false,
+      "id": "MyEnum"
+    }
+  ],
+  "categories": [
+    {
+      "name": "PartOfWorld",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": true,
+        "FeatureVectorLength": 1
+      },
+      "minValue": 0.0,
+      "maxValue": 0.0,
+      "id": "PartOfWorld"
+    },
+    {
+      "name": "Difficulty",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": 0.0,
+      "maxValue": 0.0,
+      "id": "Difficulty"
+    },
+    {
+      "name": "MyEnumCategory",
+      "type": "Enum",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+        "Enum": "MyEnum",
+        "Value": 0,
+        "FeatureVectorLength": 16
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "MyEnumCategory"
+    }
+  ],
+  "nodes": [
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "PartOfWorld",
+          "type": "Boolean",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+            "Value": true,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "MyEnumCategory",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "MyEnum",
+            "Value": 0,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "World"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [
+        {
+          "category": "Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 10.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "MyEnumCategory",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "MyEnum",
+            "Value": 0,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [
+        "Area 1-Area 2",
+        "Area 1-Area 3"
+      ],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 3.63,
+          "y": 1.96,
+          "z": 0.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 1"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [
+        {
+          "category": "Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 60.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "MyEnumCategory",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "MyEnum",
+            "Value": 0,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [
+        "Area 1-Area 2",
+        "Area 2-Area 3"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.9100001,
+          "y": 1.96,
+          "z": -2.17
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 2"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [
+        {
+          "category": "Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 100.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [
+        "Area 2-Area 3",
+        "Area 1-Area 3"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -4.98,
+          "y": 1.35,
+          "z": -1.28
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 3"
+    },
+    {
+      "name": "Cube",
+      "superNode": "Area 1",
+      "attributes": [
+        {
+          "category": "Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 24.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [
+        "-139792--141622"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 4.85000038,
+          "y": 0.87,
+          "z": -1.7
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-139792"
+    },
+    {
+      "name": "Cube",
+      "superNode": "Area 2",
+      "attributes": [],
+      "relations": [
+        "-139792--141622",
+        "-141622-Sub Area 2.2"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.9100001,
+          "y": 1.21,
+          "z": -3.78000021
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-141622"
+    },
+    {
+      "name": null,
+      "superNode": "Area 2",
+      "attributes": [],
+      "relations": [
+        "-141622-Sub Area 2.2"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.04488337,
+          "y": -3.54542351,
+          "z": -6.57863665
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Sub Area 2.2"
+    }
+  ],
+  "relations": [
+    {
+      "source": "Area 1",
+      "target": "Area 2",
+      "attributeRelations": [
+        {
+          "category": "MyEnumCategory",
+          "data": {
+            "type": "Linear"
+          },
+          "id": "Area 1-Area 2:MyEnumCategory"
+        }
+      ],
+      "id": "Area 1-Area 2"
+    },
+    {
+      "source": "Area 2",
+      "target": "Area 3",
+      "attributeRelations": [],
+      "id": "Area 2-Area 3"
+    },
+    {
+      "source": "Area 1",
+      "target": "Area 3",
+      "attributeRelations": [],
+      "id": "Area 1-Area 3"
+    },
+    {
+      "source": "-141622",
+      "target": "-139792",
+      "attributeRelations": [
+        {
+          "category": "Difficulty",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.HGraphAttributeRelationContent_Step, achioto.gamespace-pcg",
+            "step": 0.483,
+            "type": "Step"
+          },
+          "id": "-139792--141622:Difficulty"
+        }
+      ],
+      "id": "-139792--141622"
+    },
+    {
+      "source": "Sub Area 2.2",
+      "target": "-141622",
+      "attributeRelations": [],
+      "id": "-141622-Sub Area 2.2"
+    }
+  ],
+  "rulesGUID": ""
+}

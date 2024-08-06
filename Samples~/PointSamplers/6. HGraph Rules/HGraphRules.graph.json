@@ -1,0 +1,312 @@
+{
+  "enumData": [],
+  "categories": [
+    {
+      "name": "Spreading Value",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": 0.0,
+      "maxValue": 100.0,
+      "id": "Spreading Value"
+    },
+    {
+      "name": "Computed Value",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": 0.0,
+      "maxValue": 0.0,
+      "id": "Computed Value"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Cube",
+      "superNode": "Area 1",
+      "attributes": [],
+      "relations": [
+        "-139792--141622"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 4.85000038,
+          "y": 0.87,
+          "z": -1.7
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-139792"
+    },
+    {
+      "name": "Cube",
+      "superNode": "Area 2",
+      "attributes": [],
+      "relations": [
+        "-139792--141622"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.91,
+          "y": 1.21,
+          "z": -3.78000021
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-141622"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [
+        {
+          "category": "Spreading Value",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 100.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [
+        "Area 1-Area 2",
+        "Area 1-Area 3"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 3.63,
+          "y": 1.96,
+          "z": 0.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 1"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [],
+      "relations": [
+        "Area 1-Area 2",
+        "Area 2-Area 3"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.91,
+          "y": 1.96,
+          "z": -2.17
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 2"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [],
+      "relations": [
+        "Area 2-Area 3",
+        "Area 1-Area 3",
+        "Area 3-Area 4"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -4.98,
+          "y": 1.35,
+          "z": -1.28
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 3"
+    },
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "World"
+    },
+    {
+      "name": null,
+      "superNode": "World",
+      "attributes": [],
+      "relations": [
+        "Area 3-Area 4"
+      ],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -8.57,
+          "y": 1.35,
+          "z": -1.28
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Area 4"
+    }
+  ],
+  "relations": [
+    {
+      "source": "-139792",
+      "target": "-141622",
+      "attributeRelations": [],
+      "id": "-139792--141622"
+    },
+    {
+      "source": "Area 1",
+      "target": "Area 2",
+      "attributeRelations": [],
+      "id": "Area 1-Area 2"
+    },
+    {
+      "source": "Area 2",
+      "target": "Area 3",
+      "attributeRelations": [],
+      "id": "Area 2-Area 3"
+    },
+    {
+      "source": "Area 3",
+      "target": "Area 1",
+      "attributeRelations": [],
+      "id": "Area 1-Area 3"
+    },
+    {
+      "source": "Area 4",
+      "target": "Area 3",
+      "attributeRelations": [],
+      "id": "Area 3-Area 4"
+    }
+  ],
+  "rulesGUID": "d6e3f5b45236eb0439afa2e3f5c8fe05"
+}

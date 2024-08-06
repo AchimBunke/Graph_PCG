@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3941636542222215519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8850592183170799158}
+  - component: {fileID: 1417463340468409374}
+  - component: {fileID: 901320236303653242}
+  m_Layer: 0
+  m_Name: WeaponAssetPlaceholder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8850592183170799158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941636542222215519}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1417463340468409374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941636542222215519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a755b2fe82020364db12eda5273788db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hGraphId:
+    value: 
+--- !u!114 &901320236303653242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941636542222215519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c10d66545a80c044b28e4125c69f8e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _allowAutoInvocation: 1
+  _allowHierarchicalInvocation: 1
+  _allowHierarchicalDelegation: 1
+  _isContentLocked: 0
+  _generatorTypes:
+  - assets
+  - loot
+  _generationOrder: 1
+  _weaponType: 0
+  _availableWeapons:
+  - {fileID: 3403920827508265529, guid: 5e3c9044417009b41b18a115e83b6a09, type: 3}
+  - {fileID: 3810914651681396283, guid: 080b9323390abe049b1be03d3b704a6e, type: 3}
+  - {fileID: 7025344459030766585, guid: dfc7d3b94973f3e4bbf7874cda8ee5a2, type: 3}
+  _instatiatedAsset: {fileID: 0}

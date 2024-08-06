@@ -1,0 +1,1055 @@
+{
+  "enumData": [
+    {
+      "Entries": [
+        {
+          "Name": "None",
+          "Value": 0
+        },
+        {
+          "Name": "HideInHierarchy",
+          "Value": 1
+        },
+        {
+          "Name": "HideInInspector",
+          "Value": 2
+        },
+        {
+          "Name": "DontSaveInEditor",
+          "Value": 4
+        },
+        {
+          "Name": "NotEditable",
+          "Value": 8
+        },
+        {
+          "Name": "DontSaveInBuild",
+          "Value": 16
+        },
+        {
+          "Name": "DontUnloadUnusedAsset",
+          "Value": 32
+        },
+        {
+          "Name": "DontSave",
+          "Value": 52
+        },
+        {
+          "Name": "HideAndDontSave",
+          "Value": 61
+        }
+      ],
+      "Flags": true,
+      "id": "contentFlags"
+    },
+    {
+      "Entries": [
+        {
+          "Name": "Sword",
+          "Value": 0
+        },
+        {
+          "Name": "Staff",
+          "Value": 1
+        },
+        {
+          "Name": "Shield",
+          "Value": 2
+        }
+      ],
+      "Flags": false,
+      "id": "WeaponType"
+    }
+  ],
+  "categories": [
+    {
+      "name": "pcg:randomizeRotation",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": true,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeRotation"
+    },
+    {
+      "name": "pcg:randomizeTilt",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeTilt"
+    },
+    {
+      "name": "pcg:maxAssetTiltAngle",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": 0.0,
+      "maxValue": 360.0,
+      "id": "pcg:maxAssetTiltAngle"
+    },
+    {
+      "name": "pcg:contentFlags",
+      "type": "FlagsEnum",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FlagsEnumHGraphAttribute, achioto.gamespace-pcg",
+        "Enum": "contentFlags",
+        "Value": 0,
+        "FeatureVectorLength": 16
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:contentFlags"
+    },
+    {
+      "name": "pcg:randomizeScale",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeScale"
+    },
+    {
+      "name": "pcg:minScale",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:minScale"
+    },
+    {
+      "name": "pcg:maxScale",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:maxScale"
+    },
+    {
+      "name": "pcg:absolutRotation",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:absolutRotation"
+    },
+    {
+      "name": "pcg:offset",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:offset"
+    },
+    {
+      "name": "pcg:WeaponType",
+      "type": "Enum",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+        "Enum": "WeaponType",
+        "Value": 0,
+        "FeatureVectorLength": 16
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:WeaponType"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.44512892,
+          "y": 0.5,
+          "z": 0.114317596
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-9470"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-9470",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.194129,
+          "y": 1.049,
+          "z": 0.908383965
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-9498"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-9470",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.194129,
+          "y": 1.049,
+          "z": -0.341615975
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-9520"
+    },
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": true,
+        "nodePosition": {
+          "x": -2.55252767,
+          "y": 3.40117264,
+          "z": -0.1456331
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Level"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28896"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28896",
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28924"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28896",
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28946"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": null,
+      "id": "-28990"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28990",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": null,
+      "id": "-29018"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-28990",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": null,
+      "id": "-29040"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-29374"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.43418407,
+          "y": 0.499999523,
+          "z": 2.97305727
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29390"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29390",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.18318415,
+          "y": 1.04899955,
+          "z": 3.7671237
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29418"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29390",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 1.18318415,
+          "y": 1.04899955,
+          "z": 2.5171237
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29440"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.1222744,
+          "y": 0.499999523,
+          "z": -2.95249176
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29568"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29568",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.608297348,
+          "y": 1.04899955,
+          "z": -2.27623415
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29596"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29568",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -0.393218756,
+          "y": 1.04899955,
+          "z": -3.02420855
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29618"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.22252774,
+          "y": 0.5000005,
+          "z": -2.905633
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29792"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29792",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -2.40523458,
+          "y": 1.0490005,
+          "z": -3.06555319
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29820"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-29792",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.502581,
+          "y": 1.0490005,
+          "z": -2.46694565
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-29842"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Level",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 2,
+            "FeatureVectorLength": 16
+          }
+        },
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.53252769,
+          "y": 0.5,
+          "z": 3.1843667
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-31542"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-31542",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 2,
+            "FeatureVectorLength": 16
+          }
+        },
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.537626,
+          "y": 1.049,
+          "z": 4.01714325
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-31570"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-31542",
+      "attributes": [
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 2,
+            "FeatureVectorLength": 16
+          }
+        },
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 1,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": -3.907067,
+          "y": 1.049,
+          "z": 2.82298517
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-31592"
+    },
+    {
+      "name": "Cube",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-139792"
+    },
+    {
+      "name": "Cube",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-141622"
+    }
+  ],
+  "relations": [],
+  "rulesGUID": ""
+}

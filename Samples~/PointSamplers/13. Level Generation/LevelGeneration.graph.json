@@ -1,0 +1,1127 @@
+{
+  "enumData": [],
+  "categories": [
+    {
+      "name": "Temperature",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": -100.0,
+      "maxValue": 100.0,
+      "id": "Temperature"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Node (5)",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-105870"
+    },
+    {
+      "name": "World",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-98638"
+    },
+    {
+      "name": "Node",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-98278"
+    },
+    {
+      "name": "Terrain Generation",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-100090"
+    },
+    {
+      "name": "Node (2)",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-105100"
+    },
+    {
+      "name": "Node (4)",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-105600"
+    },
+    {
+      "name": "Node (1)",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-104258"
+    },
+    {
+      "name": "Node (3)",
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": null,
+      "id": "-105350"
+    },
+    {
+      "name": null,
+      "superNode": "Root",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Terrain Node"
+    },
+    {
+      "name": null,
+      "superNode": null,
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Root"
+    },
+    {
+      "name": "Big Forest",
+      "superNode": "Root",
+      "attributes": [
+        {
+          "category": "pcg:CarveHeightmaps",
+          "type": "Boolean",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+            "Value": true,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "pcg:contentFlags",
+          "type": "FlagsEnum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FlagsEnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "contentFlags",
+            "Value": 3,
+            "FeatureVectorLength": 16
+          }
+        },
+        {
+          "category": "pcg:minScale",
+          "type": "Vector3",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+            "Vector": {
+              "x": 0.6,
+              "y": 0.6,
+              "z": 0.6
+            },
+            "FeatureVectorLength": 3
+          }
+        },
+        {
+          "category": "pcg:maxScale",
+          "type": "Vector3",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+            "Vector": {
+              "x": 1.2,
+              "y": 1.2,
+              "z": 1.2
+            },
+            "FeatureVectorLength": 3
+          }
+        },
+        {
+          "category": "pcg:absolutRotation",
+          "type": "Boolean",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+            "Value": true,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "pcg:randomizeTilt",
+          "type": "Boolean",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+            "Value": true,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "pcg:maxAssetTiltAngle",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 10.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "pcg:offset",
+          "type": "Vector3",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+            "Vector": {
+              "x": 0.0,
+              "y": -0.4,
+              "z": 0.0
+            },
+            "FeatureVectorLength": 3
+          }
+        },
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 50.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 65.4,
+          "y": 1.0,
+          "z": 44.2
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "CapsuleCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 50.0,
+        "height": 0.0,
+        "direction": 1
+      },
+      "id": "Big Forest"
+    },
+    {
+      "name": null,
+      "superNode": "Root",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Difficulty Distribution"
+    },
+    {
+      "name": null,
+      "superNode": "Root",
+      "attributes": [
+        {
+          "category": "pcg:absolutRotation",
+          "type": "Boolean",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+            "Value": true,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "pcg:offset",
+          "type": "Vector3",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+            "Vector": {
+              "x": 0.0,
+              "y": -0.1,
+              "z": 0.0
+            },
+            "FeatureVectorLength": 3
+          }
+        },
+        {
+          "category": "pcg:WeaponType",
+          "type": "Enum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "WeaponType",
+            "Value": 0,
+            "FeatureVectorLength": 16
+          }
+        },
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 10.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 15.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 35.8,
+          "y": 0.0,
+          "z": 157.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "CapsuleCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 40.0,
+        "height": 100.0,
+        "direction": 1
+      },
+      "id": "Village"
+    },
+    {
+      "name": null,
+      "superNode": "Village",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 35.8,
+          "y": 0.0,
+          "z": 157.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Village Market"
+    },
+    {
+      "name": null,
+      "superNode": "Big Forest",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 65.4,
+          "y": 1.0,
+          "z": 87.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": -9.085224,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 38.17045,
+          "y": 20.0,
+          "z": 20.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Big Forest - Clearing"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 64.62873,
+          "y": 0.499999046,
+          "z": 130.620132
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-4896"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 64.26888,
+          "y": 0.5,
+          "z": 135.109146
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-5076"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 60.02204,
+          "y": 0.4754998,
+          "z": 136.000473
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": -0.7152065,
+          "z": 0.0,
+          "w": 0.6989132
+        },
+        "nodeScale": {
+          "x": 1.00000012,
+          "y": 1.0,
+          "z": 1.00000012
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-4810"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 64.37773,
+          "y": 1.04899907,
+          "z": 131.4142
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-4924"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 64.37773,
+          "y": 1.04899907,
+          "z": 130.1642
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-4946"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 64.01788,
+          "y": 1.049,
+          "z": 135.903214
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-5104"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 64.01788,
+          "y": 1.049,
+          "z": 134.653214
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-5126"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 59.23397,
+          "y": 1.02449989,
+          "z": 135.731247
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": -0.7152065,
+          "z": 0.0,
+          "w": 0.6989132
+        },
+        "nodeScale": {
+          "x": 1.00000012,
+          "y": 1.0,
+          "z": 1.00000012
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-4838"
+    },
+    {
+      "name": null,
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 60.4836349,
+          "y": 1.02449989,
+          "z": 135.76004
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": -0.7152065,
+          "z": 0.0,
+          "w": 0.6989132
+        },
+        "nodeScale": {
+          "x": 1.00000012,
+          "y": 1.0,
+          "z": 1.00000012
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-4860"
+    },
+    {
+      "name": "Weapon Store",
+      "superNode": "Village Market",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 57.0104027,
+          "y": 0.0,
+          "z": 134.019363
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.9697957,
+          "z": 0.0,
+          "w": -0.243918464
+        },
+        "nodeScale": {
+          "x": 0.9999997,
+          "y": 1.0,
+          "z": 0.9999997
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-6844"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-6844",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 56.85586,
+          "y": 0.549,
+          "z": 133.201035
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.9697957,
+          "z": 0.0,
+          "w": -0.243918464
+        },
+        "nodeScale": {
+          "x": 0.9999997,
+          "y": 1.0,
+          "z": 0.9999997
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-6872"
+    },
+    {
+      "name": "WeaponAssetPlaceholder",
+      "superNode": "-6844",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": true,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 57.44724,
+          "y": 0.549,
+          "z": 134.302292
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.9697957,
+          "z": 0.0,
+          "w": -0.243918464
+        },
+        "nodeScale": {
+          "x": 0.9999997,
+          "y": 1.0,
+          "z": 0.9999997
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "-6894"
+    },
+    {
+      "name": null,
+      "superNode": "Root",
+      "attributes": [
+        {
+          "category": "Temperature",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 60.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "pcg:absolutRotation",
+          "type": "Boolean",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+            "Value": true,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
+          "category": "pcg:contentFlags",
+          "type": "FlagsEnum",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FlagsEnumHGraphAttribute, achioto.gamespace-pcg",
+            "Enum": "contentFlags",
+            "Value": 3,
+            "FeatureVectorLength": 16
+          }
+        }
+      ],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 179.0,
+          "y": 0.0,
+          "z": 180.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "SphereCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.5,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Dead Forest"
+    },
+    {
+      "name": null,
+      "superNode": "Big Forest",
+      "attributes": [],
+      "relations": [],
+      "spaceData": {
+        "isAtomic": false,
+        "isImplicit": false,
+        "nodePosition": {
+          "x": 65.4,
+          "y": 1.0,
+          "z": 44.2
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "colliderType": "BoxCollider",
+        "center": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "size": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "radius": 0.0,
+        "height": 0.0,
+        "direction": 0
+      },
+      "id": "Forest Path"
+    }
+  ],
+  "relations": [],
+  "rulesGUID": ""
+}

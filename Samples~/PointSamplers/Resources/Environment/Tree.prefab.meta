@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 27b6864478b3ce24ea4d964601156173
+PrefabImporter:
+  externalObjects: {}
+  userData: "{\r\n  \"attributes\": [\r\n    {\r\n      \"category\": \"Temperature\",\r\n     
+    \"type\": \"Float\",\r\n      \"data\": {\r\n        \"$type\": \"Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute,
+    achioto.gamespace-pcg\",\r\n        \"Value\": 15.0,\r\n        \"FeatureVectorLength\":
+    1\r\n      }\r\n    }\r\n  ]\r\n}"
+  assetBundleName: 
+  assetBundleVariant: 

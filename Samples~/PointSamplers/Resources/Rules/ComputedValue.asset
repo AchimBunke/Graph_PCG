@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716c5eed9b4f40745bc4abd5d54038b2, type: 3}
+  m_Name: ComputedValue
+  m_EditorClassIdentifier: 
+  <ExecutionPriority>k__BackingField: 100
+  <ApplyRule>k__BackingField: 1
+  computedCategoryName: Computed Value
+  spreadingValueCategoryName: Spreading Value

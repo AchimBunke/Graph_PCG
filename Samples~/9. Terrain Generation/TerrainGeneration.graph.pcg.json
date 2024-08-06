@@ -292,6 +292,42 @@
       "id": "pcg:Difficulty"
     },
     {
+      "name": "pcg:wfc:DisallowRoofs",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:DisallowRoofs"
+    },
+    {
+      "name": "pcg:wfc:ManyFountains",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:ManyFountains"
+    },
+    {
       "name": "pcg:WeaponType",
       "type": "Enum",
       "displayColor": {
@@ -335,6 +371,17 @@
           "y": 99.0,
           "z": 296.3
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -374,6 +421,17 @@
           "x": 255.8,
           "y": 50.0,
           "z": 296.3
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -415,6 +473,17 @@
           "y": 0.0,
           "z": 0.0
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -454,6 +523,17 @@
           "x": 103.600006,
           "y": 73.5,
           "z": 103.499985
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -495,6 +575,17 @@
           "y": 55.0,
           "z": 103.499985
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -534,6 +625,17 @@
           "x": 328.5,
           "y": 80.0,
           "z": 172.299988
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -575,6 +677,17 @@
           "y": 120.0,
           "z": 63.09999
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -614,6 +727,17 @@
           "x": 396.2,
           "y": 60.0,
           "z": 456.599976
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {

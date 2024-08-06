@@ -54,6 +54,17 @@
           "y": 0.87,
           "z": -1.7
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -85,6 +96,17 @@
           "x": 0.91,
           "y": 1.21,
           "z": -3.78000021
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -129,6 +151,17 @@
           "y": 1.96,
           "z": 0.0
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -161,6 +194,17 @@
           "x": 0.91,
           "y": 1.96,
           "z": -2.17
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -196,6 +240,17 @@
           "y": 1.35,
           "z": -1.28
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -225,6 +280,17 @@
           "x": 0.0,
           "y": 0.0,
           "z": 0.0
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -257,6 +323,17 @@
           "x": -8.57,
           "y": 1.35,
           "z": -1.28
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {

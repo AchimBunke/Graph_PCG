@@ -63,6 +63,42 @@
   ],
   "categories": [
     {
+      "name": "pcg:CarveHeightmaps",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:CarveHeightmaps"
+    },
+    {
+      "name": "pcg:epsilon",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 10.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:epsilon"
+    },
+    {
       "name": "pcg:randomizeRotation",
       "type": "Boolean",
       "displayColor": {
@@ -256,6 +292,42 @@
       "id": "pcg:Difficulty"
     },
     {
+      "name": "pcg:wfc:DisallowRoofs",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:DisallowRoofs"
+    },
+    {
+      "name": "pcg:wfc:ManyFountains",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:ManyFountains"
+    },
+    {
       "name": "pcg:WeaponType",
       "type": "Enum",
       "displayColor": {
@@ -299,6 +371,17 @@
           "y": 0.0,
           "z": 1.3
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -338,6 +421,17 @@
           "x": 19.29,
           "y": 0.0,
           "z": 1.29999924
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -379,6 +473,17 @@
           "y": 0.0,
           "z": 24.8
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -419,6 +524,17 @@
           "y": 0.0,
           "z": -12.07
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -458,6 +574,17 @@
           "x": 3.6,
           "y": 0.0,
           "z": -23.65
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {

@@ -63,6 +63,42 @@
   ],
   "categories": [
     {
+      "name": "pcg:CarveHeightmaps",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:CarveHeightmaps"
+    },
+    {
+      "name": "pcg:epsilon",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 10.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:epsilon"
+    },
+    {
       "name": "pcg:randomizeRotation",
       "type": "Boolean",
       "displayColor": {
@@ -238,6 +274,60 @@
       "id": "pcg:offset"
     },
     {
+      "name": "pcg:Difficulty",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:Difficulty"
+    },
+    {
+      "name": "pcg:wfc:DisallowRoofs",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:DisallowRoofs"
+    },
+    {
+      "name": "pcg:wfc:ManyFountains",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:ManyFountains"
+    },
+    {
       "name": "pcg:WeaponType",
       "type": "Enum",
       "displayColor": {
@@ -282,6 +372,17 @@
           "y": 0.5,
           "z": 0.114317596
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -322,6 +423,17 @@
           "x": 1.194129,
           "y": 1.049,
           "z": 0.908383965
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -364,6 +476,17 @@
           "y": 1.049,
           "z": -0.341615975
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -404,6 +527,17 @@
           "x": -2.55252767,
           "y": 3.40117264,
           "z": -0.1456331
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -535,6 +669,17 @@
           "y": 0.499999523,
           "z": 2.97305727
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -575,6 +720,17 @@
           "x": 1.18318415,
           "y": 1.04899955,
           "z": 3.7671237
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -617,6 +773,17 @@
           "y": 1.04899955,
           "z": 2.5171237
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -657,6 +824,17 @@
           "x": 0.1222744,
           "y": 0.499999523,
           "z": -2.95249176
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.4481186,
+          "z": 0.0,
+          "w": 0.8939741
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -699,6 +877,17 @@
           "y": 1.04899955,
           "z": -2.27623415
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.4481186,
+          "z": 0.0,
+          "w": 0.8939741
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -739,6 +928,17 @@
           "x": -0.393218756,
           "y": 1.04899955,
           "z": -3.02420855
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.4481186,
+          "z": 0.0,
+          "w": 0.8939741
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -781,6 +981,17 @@
           "y": 0.5000005,
           "z": -2.905633
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.85990876,
+          "z": 0.0,
+          "w": 0.51044786
+        },
+        "nodeScale": {
+          "x": 1.00000024,
+          "y": 1.0,
+          "z": 1.00000024
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -822,6 +1033,17 @@
           "y": 1.0490005,
           "z": -3.06555319
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.85990876,
+          "z": 0.0,
+          "w": 0.51044786
+        },
+        "nodeScale": {
+          "x": 1.00000024,
+          "y": 1.0,
+          "z": 1.00000024
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -862,6 +1084,17 @@
           "x": -3.502581,
           "y": 1.0490005,
           "z": -2.46694565
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.85990876,
+          "z": 0.0,
+          "w": 0.51044786
+        },
+        "nodeScale": {
+          "x": 1.00000024,
+          "y": 1.0,
+          "z": 1.00000024
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -914,6 +1147,17 @@
           "y": 0.5,
           "z": 3.1843667
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.149455026,
+          "z": 0.0,
+          "w": 0.9887686
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -965,6 +1209,17 @@
           "y": 1.049,
           "z": 4.01714325
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.149455026,
+          "z": 0.0,
+          "w": 0.9887686
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -1015,6 +1270,17 @@
           "x": -3.907067,
           "y": 1.049,
           "z": 2.82298517
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.149455026,
+          "z": 0.0,
+          "w": 0.9887686
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {

@@ -1,6 +1,352 @@
 {
-  "enumData": [],
-  "categories": [],
+  "enumData": [
+    {
+      "Entries": [
+        {
+          "Name": "None",
+          "Value": 0
+        },
+        {
+          "Name": "HideInHierarchy",
+          "Value": 1
+        },
+        {
+          "Name": "HideInInspector",
+          "Value": 2
+        },
+        {
+          "Name": "DontSaveInEditor",
+          "Value": 4
+        },
+        {
+          "Name": "NotEditable",
+          "Value": 8
+        },
+        {
+          "Name": "DontSaveInBuild",
+          "Value": 16
+        },
+        {
+          "Name": "DontUnloadUnusedAsset",
+          "Value": 32
+        },
+        {
+          "Name": "DontSave",
+          "Value": 52
+        },
+        {
+          "Name": "HideAndDontSave",
+          "Value": 61
+        }
+      ],
+      "Flags": true,
+      "id": "contentFlags"
+    },
+    {
+      "Entries": [
+        {
+          "Name": "Sword",
+          "Value": 0
+        },
+        {
+          "Name": "Staff",
+          "Value": 1
+        },
+        {
+          "Name": "Shield",
+          "Value": 2
+        }
+      ],
+      "Flags": false,
+      "id": "WeaponType"
+    }
+  ],
+  "categories": [
+    {
+      "name": "pcg:CarveHeightmaps",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:CarveHeightmaps"
+    },
+    {
+      "name": "pcg:epsilon",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 10.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:epsilon"
+    },
+    {
+      "name": "pcg:randomizeRotation",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": true,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeRotation"
+    },
+    {
+      "name": "pcg:randomizeTilt",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeTilt"
+    },
+    {
+      "name": "pcg:maxAssetTiltAngle",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": 0.0,
+      "maxValue": 360.0,
+      "id": "pcg:maxAssetTiltAngle"
+    },
+    {
+      "name": "pcg:contentFlags",
+      "type": "FlagsEnum",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FlagsEnumHGraphAttribute, achioto.gamespace-pcg",
+        "Enum": "contentFlags",
+        "Value": 0,
+        "FeatureVectorLength": 16
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:contentFlags"
+    },
+    {
+      "name": "pcg:randomizeScale",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:randomizeScale"
+    },
+    {
+      "name": "pcg:minScale",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:minScale"
+    },
+    {
+      "name": "pcg:maxScale",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:maxScale"
+    },
+    {
+      "name": "pcg:absolutRotation",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:absolutRotation"
+    },
+    {
+      "name": "pcg:offset",
+      "type": "Vector3",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.Vector3HGraphAttribute, achioto.gamespace-pcg",
+        "Vector": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0
+        },
+        "FeatureVectorLength": 3
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:offset"
+    },
+    {
+      "name": "pcg:Difficulty",
+      "type": "Float",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+        "Value": 0.0,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:Difficulty"
+    },
+    {
+      "name": "pcg:wfc:DisallowRoofs",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:DisallowRoofs"
+    },
+    {
+      "name": "pcg:wfc:ManyFountains",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:ManyFountains"
+    },
+    {
+      "name": "pcg:WeaponType",
+      "type": "Enum",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.EnumHGraphAttribute, achioto.gamespace-pcg",
+        "Enum": "WeaponType",
+        "Value": 0,
+        "FeatureVectorLength": 16
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:WeaponType"
+    }
+  ],
   "nodes": [
     {
       "name": "Node",
@@ -14,6 +360,17 @@
           "x": 103.600006,
           "y": 99.0,
           "z": 296.3
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -55,6 +412,17 @@
           "y": 50.0,
           "z": 296.3
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -95,6 +463,17 @@
           "y": 0.0,
           "z": 0.0
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -124,6 +503,17 @@
           "x": 103.600006,
           "y": 73.5,
           "z": 103.499985
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -155,6 +545,17 @@
           "y": 55.0,
           "z": 103.499985
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -184,6 +585,17 @@
           "x": 328.5,
           "y": 80.0,
           "z": 172.299988
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {
@@ -215,6 +627,17 @@
           "y": 120.0,
           "z": 63.09999
         },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
+        },
         "colliderType": "BoxCollider",
         "center": {
           "x": 0.0,
@@ -244,6 +667,17 @@
           "x": 396.2,
           "y": 60.0,
           "z": 456.599976
+        },
+        "nodeRotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "nodeScale": {
+          "x": 1.0,
+          "y": 1.0,
+          "z": 1.0
         },
         "colliderType": "BoxCollider",
         "center": {

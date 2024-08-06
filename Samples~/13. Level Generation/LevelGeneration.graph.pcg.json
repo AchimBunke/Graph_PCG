@@ -310,6 +310,42 @@
       "id": "pcg:Difficulty"
     },
     {
+      "name": "pcg:wfc:DisallowRoofs",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:DisallowRoofs"
+    },
+    {
+      "name": "pcg:wfc:ManyFountains",
+      "type": "Boolean",
+      "displayColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 0.0
+      },
+      "defaultContent": {
+        "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.BooleanHGraphAttribute, achioto.gamespace-pcg",
+        "Value": false,
+        "FeatureVectorLength": 1
+      },
+      "minValue": "NaN",
+      "maxValue": "NaN",
+      "id": "pcg:wfc:ManyFountains"
+    },
+    {
       "name": "pcg:WeaponType",
       "type": "Enum",
       "displayColor": {

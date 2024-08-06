@@ -786,6 +786,15 @@
       "superNode": "Village",
       "attributes": [
         {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
           "data": {
@@ -1014,6 +1023,15 @@
       "superNode": "Village Market",
       "attributes": [
         {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
           "data": {
@@ -1105,6 +1123,15 @@
       "name": null,
       "superNode": "Village Market",
       "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
         {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
@@ -1198,6 +1225,15 @@
       "superNode": "Village Market",
       "attributes": [
         {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
           "data": {
@@ -1289,6 +1325,15 @@
       "name": null,
       "superNode": "Village Market",
       "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
         {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
@@ -1382,6 +1427,15 @@
       "superNode": "Village Market",
       "attributes": [
         {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
           "data": {
@@ -1473,6 +1527,15 @@
       "name": null,
       "superNode": "Village Market",
       "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
         {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
@@ -1566,6 +1629,15 @@
       "superNode": "Village Market",
       "attributes": [
         {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
           "data": {
@@ -1657,6 +1729,15 @@
       "name": null,
       "superNode": "Village Market",
       "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
         {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
@@ -1750,6 +1831,15 @@
       "superNode": "Village Market",
       "attributes": [
         {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
           "data": {
@@ -1841,6 +1931,15 @@
       "name": "Weapon Store",
       "superNode": "Village Market",
       "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
         {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
@@ -1934,6 +2033,15 @@
       "superNode": "-6844",
       "attributes": [
         {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
+        {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
           "data": {
@@ -2025,6 +2133,15 @@
       "name": "WeaponAssetPlaceholder",
       "superNode": "-6844",
       "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        },
         {
           "category": "pcg:absolutRotation",
           "type": "Boolean",
@@ -2143,6 +2260,15 @@
             "Enum": "contentFlags",
             "Value": 3,
             "FeatureVectorLength": 16
+          }
+        },
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 75.0,
+            "FeatureVectorLength": 1
           }
         }
       ],

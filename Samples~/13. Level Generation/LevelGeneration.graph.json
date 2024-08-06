@@ -784,7 +784,17 @@
     {
       "name": null,
       "superNode": "Village",
-      "attributes": [],
+      "attributes": [
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 0.0,
+            "FeatureVectorLength": 1
+          }
+        }
+      ],
       "relations": [],
       "spaceData": {
         "isAtomic": false,
@@ -1385,6 +1395,15 @@
             "Enum": "contentFlags",
             "Value": 3,
             "FeatureVectorLength": 16
+          }
+        },
+        {
+          "category": "pcg:Difficulty",
+          "type": "Float",
+          "data": {
+            "$type": "Achioto.Gamespace_PCG.Runtime.Graph.Serialization.FloatHGraphAttribute, achioto.gamespace-pcg",
+            "Value": 75.0,
+            "FeatureVectorLength": 1
           }
         }
       ],

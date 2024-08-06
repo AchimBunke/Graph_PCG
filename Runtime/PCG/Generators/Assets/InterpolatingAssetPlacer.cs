@@ -1,6 +1,9 @@
 using Achioto.Gamespace_PCG.Runtime.Graph.Distance;
 using Achioto.Gamespace_PCG.Runtime.Graph.FeatureEncoding;
 using Achioto.Gamespace_PCG.Runtime.Graph.Interpolation;
+using Achioto.Gamespace_PCG.Runtime.Graph.PCG.Generator;
+using Achioto.Gamespace_PCG.Runtime.Graph.Runtime;
+using Achioto.Gamespace_PCG.Runtime.Graph.Runtime.Services;
 using Achioto.Gamespace_PCG.Runtime.Graph.Scene;
 using Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space;
 using Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services;
@@ -9,7 +12,6 @@ using Achioto.Gamespace_PCG.Runtime.Graph.Services;
 using Achioto.Gamespace_PCG.Runtime.PCG.Database;
 using Achioto.Gamespace_PCG.Runtime.PCG.PointSamplers;
 using ALib.Collections;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -18,23 +20,14 @@ using UnityUtilities.Attributes;
 using static UnityUtilities.Attributes.ShowIfAttribute;
 using Random = UnityEngine.Random;
 
-namespace Achioto.Gamespace_PCG.Runtime.Graph.PCG.Generator
+namespace Achioto.Gamespace_PCG.Runtime.PCG.Generators.Assets
 {
-    public class HGraphAssetPlacementGenerator : HGraphGenerator
+    public class InterpolatingAssetPlacer : HGraphGenerator
     {
         [SerializeField] HGraphSceneNode _regionNode;
         [SerializeField] PCGAssetDatabase _assetDataBase;
-        [SerializeField] GameObject _generatedContent;
         [SerializeField] PCGPointSampler _pointSampler;
-        [SerializeField] protected HideFlags _contentFlags = HideFlags.None;
-
-        [SerializeField] bool _randomizeTilt = false;
-        [SerializeField, ShowIfBool(nameof(_randomizeTilt), HideInInspector = true), Range(0f, 360f)] float _maxAssetTiltAngle;
-
-        [SerializeField] bool _randomizeScale = false;
-        [SerializeField, ShowIfBool(nameof(_randomizeScale), HideInInspector = true)] Vector3 _minScale = Vector3.one;
-        [SerializeField, ShowIfBool(nameof(_randomizeScale), HideInInspector = true)] Vector3 _maxScale = Vector3.one;
-
+        [SerializeField] AssetPlacer.AssetPlacerSettings _generationSettings = AssetPlacer.AssetPlacerSettings.Default;
 
         [SerializeField] HGraphAssetSelectionMode _generationMode;
         [SerializeField,
@@ -49,6 +42,8 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.PCG.Generator
         [SerializeField] FeatureDistanceMeasureConfiguration _featureDistanceConfiguration;
         [SerializeField] HGraphSpaceSearchSettings _spaceSearchSettings = HGraphSpaceSearchSettings.Default;
         [SerializeField] ActivationFunctionConfiguration _activationFunctionConfiguration;
+
+        [SerializeField, ReadOnlyField] GameObject _generatedContent;
 
         private bool IsRandomTopK() => _generationMode == HGraphAssetSelectionMode.RandomTopK;
         private bool IsWeightedTopK() => _generationMode == HGraphAssetSelectionMode.WeightedTopK;
@@ -218,31 +213,42 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.PCG.Generator
                 }
                 var instance = Instantiate(asset, p.Position, p.Rotation, _generatedContent.transform);
                 instance.transform.localScale = p.Scale;
-                instance.hideFlags = _contentFlags;
+                instance.hideFlags = _generationSettings.contentFlags;
             }
         }
         private IEnumerable<PCGPoint> TransformPoints(IEnumerable<PCGPoint> points)
         {
             return points.Select(p =>
             {
+                p.Position = ApplyOffset(p.Position, p.Rotation);
                 p.Scale = GetRandomScale();
                 p.Rotation = GetRandomRotation(p.Normal);
                 return p;
             });
         }
+        private Vector3 ApplyOffset(Vector3 position, Quaternion rotation)
+        {
+            if (_generationSettings.absolutRotation)
+            {
+                return position + _generationSettings.offset;
+            }
+            else
+            {
+                return position + (rotation * _generationSettings.offset);
+            }
+        }
         private Quaternion GetRandomRotation(Vector3 surfaceNormal)
         {
-            Quaternion randomTilt = Quaternion.identity;
-            if (_randomizeTilt)
-                randomTilt = Quaternion.AngleAxis(Random.Range(0f, _maxAssetTiltAngle), Random.onUnitSphere);
-            Quaternion randomYRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
-            return Quaternion.FromToRotation(Vector3.up, surfaceNormal) * randomTilt * randomYRotation;
+            Quaternion randomTilt = _generationSettings.randomizeTilt ? Quaternion.AngleAxis(Random.Range(0f, _generationSettings.maxAssetTiltAngle), Random.onUnitSphere) : Quaternion.identity;
+            Quaternion randomYRotation = _generationSettings.randomizeRotation ? Quaternion.Euler(0f, Random.Range(0f, 360f), 0f) : Quaternion.identity;
+            return Quaternion.FromToRotation(Vector3.up, _generationSettings.absolutRotation ? Vector3.up : surfaceNormal) * randomTilt * randomYRotation;
+
         }
         private Vector3 GetRandomScale()
         {
-            if (!_randomizeScale)
-                return Vector3.one;
-            return Vector3.Lerp(_minScale, _maxScale, Random.Range(0f, 1f));
+            return _generationSettings.randomizeScale ?
+                Vector3.Lerp(_generationSettings.minScale, _generationSettings.maxScale, Random.Range(0f, 1f)) :
+                Vector3.one;
         }
         protected override void PrepareGeneration()
         {
@@ -259,21 +265,21 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.PCG.Generator
                     PrepareWeightedTopK();
                     break;
             }
-        }
-        private void Update()
-        {
-            if (_generatedContent != null)
+            if (_regionNode)
             {
-                if (_generatedContent.transform.childCount > 0 && _generatedContent.transform.GetChild(0).gameObject.hideFlags != _contentFlags)
+                var pcgGraph = PCGGraphManager.Instance.PCGGraph;
+
+                if (pcgGraph.Nodes.TryGetValue(_regionNode.HGraphId.Value, out var node))
                 {
-                    //_generatedContent.hideFlags = _contentFlags;
-                    for (int i = 0; i < _generatedContent.transform.childCount; ++i)
-                    {
-                        _generatedContent.transform.GetChild(i).gameObject.hideFlags = _contentFlags;
-                    }
+                    _generationSettings = (AssetPlacer.AssetPlacerSettings)PCGGraphModuleManager.LoadGraphAttributesIntoMembers(_generationSettings, node);
                 }
             }
+        }
 
+        private void OnEnable()
+        {
+            if(_regionNode == null)
+                _regionNode = GetComponent<HGraphSceneNode>();
         }
     }
 }

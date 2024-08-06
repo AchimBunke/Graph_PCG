@@ -35,31 +35,44 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
         public HGraphSpaceSearchResult FindNearbyNodes(HGraphNode node, Vector3? position)
         {
             _spatialDistantMeasure = Settings.SpatialDistanceMeasureConfiguration.Create();
-            var root = FindSubtreeRoot(node);
-            var foundSubtreeNodes = FindNearbySubtreeNodes(root, node, position); // Selects all nodes inside the same tree as the targetNode. Does not consider Neighborhood.
-            var neighborhoodNodes = HGraphController.GetOpenNodeNeighborhood(foundSubtreeNodes.Select(t => t.Item1).Concat(new[] { node }).ToArray());
-            var filteredNeighborhoodSet = new HashSet<(HGraphNode node, float distance)>();
-            foreach (var n in neighborhoodNodes)
+            if (Settings.NeighborhoodMode == NeighborhoodMode.Graph)
             {
-                if (filteredNeighborhoodSet.Contains((n, 0f)))
-                    continue;
-                filteredNeighborhoodSet.UnionWith(FindNearbySubtreeNodes(n, node, position));
+                var root = FindSubtreeRoot(node);
+                var foundSubtreeNodes = FindNearbySubtreeNodes(root, node, position); // Selects all nodes inside the same tree as the targetNode. Does not consider Neighborhood.
+                var neighborhoodNodes = HGraphController.GetOpenNodeNeighborhood(foundSubtreeNodes.Select(t => t.Item1).Concat(new[] { node }).ToArray());
+                var filteredNeighborhoodSet = new HashSet<(HGraphNode node, float distance)>();
+                foreach (var n in neighborhoodNodes)
+                {
+                    if (filteredNeighborhoodSet.Contains((n, 0f)))
+                        continue;
+                    filteredNeighborhoodSet.UnionWith(FindNearbySubtreeNodes(n, node, position));
+                }
+                filteredNeighborhoodSet.Remove((node, 0f));
+                var completeSet = foundSubtreeNodes.Concat(filteredNeighborhoodSet);
+                var completeWithSpacesRemoved = completeSet.Where(n =>
+                {
+                    var space = n.node.SceneNode.Value.GetComponent<HGraphNodeSpace>();
+                    if (!Settings.SelectSpaces && (space != null))
+                        return false;
+                    if (Settings.ExcludeImplicitSpaces && space != null && space.ImplicitSpace)
+                        return false;
+                    if (!Settings.SelectAtomics && space == null)
+                        return false;
+                    return true;
+                }).Concat(new[] { (node, 0f) });
+                if (Settings.ExcludeAncestors)
+                    completeWithSpacesRemoved = completeWithSpacesRemoved.Except(node.GetAncestors().Select(n => (n, 0f)));
+                var result = new HGraphSpaceSearchResult() { Nodes = completeWithSpacesRemoved.Select(i => i.node).ToList(), Distances = completeWithSpacesRemoved.Select(i => i.Item2).ToList() };
+                return result;
             }
-            filteredNeighborhoodSet.Remove((node, 0f));
-            var completeSet = foundSubtreeNodes.Concat(filteredNeighborhoodSet);
-            var completeWithSpacesRemoved = completeSet.Where(n =>
+            else if (Settings.NeighborhoodMode == NeighborhoodMode.Spatial)
             {
-                var space = n.node.SceneNode.Value.GetComponent<HGraphNodeSpace>();
-                if (!Settings.SelectSpaces && (space != null))
-                    return false;
-                if (Settings.ExcludeImplicitSpaces && space != null && space.ImplicitSpace)
-                    return false;
-                return true;
-            }).Concat(new[] { (node, 0f) });
-            if (Settings.ExcludeAncestors)
-                completeWithSpacesRemoved = completeWithSpacesRemoved.Except(node.GetAncestors().Select(n => (n, 0f)));
-            var result = new HGraphSpaceSearchResult() { Nodes = completeWithSpacesRemoved.Select(i => i.node).ToList(), Distances = completeWithSpacesRemoved.Select(i => i.Item2).ToList() };
-            return result;
+                if(node.SceneNode.Value == null && position == null)
+                    return HGraphSpaceSearchResult.Empty;
+                var pos = position ?? node.SceneNode.Value.transform.position;
+               return FindNearbyNodes(pos);
+            }
+            else return HGraphSpaceSearchResult.Empty;
         }
         /// <summary>
         /// Find the space and the nearby nodes. Use <see cref="FindNearbyNodes(HGraphNode, Vector3?)"/> if space is already known to speed up search.
@@ -68,10 +81,44 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
         /// <returns></returns>
         public HGraphSpaceSearchResult FindNearbyNodes(Vector3 position)
         {
-            var space = FindSpace(position);
-            if (space == null)
-                return HGraphSpaceSearchResult.Empty;
-            return FindNearbyNodes(space.SceneNode.NodeData.Value, position);
+            _spatialDistantMeasure = Settings.SpatialDistanceMeasureConfiguration.Create();
+            if (Settings.NeighborhoodMode == NeighborhoodMode.Graph)
+            {
+                var space = FindSpace(position);
+                if (space == null)
+                    return HGraphSpaceSearchResult.Empty;
+                return FindNearbyNodes(space.SceneNode.NodeData.Value, position);
+
+            }else if(Settings.NeighborhoodMode == NeighborhoodMode.Spatial)
+            {
+                var hGraph = HGraph.Instance;
+                HashSet<(HGraphNode, float)> foundNodes = new(new TupleFirstItemEqualityComparer<HGraphNode, float>());
+                // All nodes in range. considers distance, SelectSpaces,SelectAtomics,ExcludeImplicitSpace
+                foreach (var node in hGraph.Nodes.Values)
+                {
+                    var sceneNode = node.SceneNode.Value;
+                    if(sceneNode == null)
+                        continue;
+                    var distance = _spatialDistantMeasure.Distance(node, position);
+                    if (distance <= Settings.MaxDistance)// Discard far away nodes
+                    {
+                        var currentSpace = sceneNode.GetComponent<HGraphNodeSpace>();
+                        if (currentSpace == null)
+                        {
+                            if(Settings.SelectAtomics)
+                                foundNodes.Add((node, distance));
+                        }
+                        else if(Settings.SelectSpaces)
+                        {
+                            if (Settings.ExcludeImplicitSpaces && currentSpace.ImplicitSpace)
+                                continue;
+                            foundNodes.Add((node, distance));
+                        }
+                    }
+                }
+                return new HGraphSpaceSearchResult() { Nodes = foundNodes.Select(n => n.Item1).ToList(), Distances = foundNodes.Select(n => n.Item2).ToList() };
+            }
+            return HGraphSpaceSearchResult.Empty;
         }
 
         public HGraphNodeSpace FindSpace(Vector3 position) => Settings.FallbackNearestSpace ? HGraphSpaceUtility.FindNearestSpace(position) : HGraphSpaceUtility.FindSpace(position);
@@ -195,6 +242,9 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
         Spatial
     }
 
+    /// <summary>
+    /// Space search on the PCGGraph. Does not use spatialDistanceMeasure !
+    /// </summary>
     public class PCGGraphSpaceSearch
     {
         private PCGGraph GetPCGGraph() => PCGGraphManager.Instance.PCGGraph;
@@ -217,40 +267,50 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
             PCGGraph = graph;
         }
 
-        private SpatialDistanceMeasure _spatialDistantMeasure;
         public PCGGraphSpaceSearchResult FindNearbyNodes(HGraphNodeData node)
         {
             return FindNearbyNodes(node, null);
-
         }
         public PCGGraphSpaceSearchResult FindNearbyNodes(HGraphNodeData node, Vector3? position)
         {
-            _spatialDistantMeasure = Settings.SpatialDistanceMeasureConfiguration.Create();
-            var root = FindSubtreeRoot(node);
-            var foundSubtreeNodes = FindNearbySubtreeNodes(root, node, position); // Selects all nodes inside the same tree as the targetNode. Does not consider Neighborhood.
-            var neighborhoodNodes = PCGGraph.GetOpenNodeNeighborhood(foundSubtreeNodes.Select(t => t.Item1).Concat(new[] { node }).ToArray());
-            var filteredNeighborhoodSet = new HashSet<(HGraphNodeData node, float distance)>();
-            foreach (var n in neighborhoodNodes)
+            if (Settings.NeighborhoodMode == NeighborhoodMode.Graph)
             {
-                if (filteredNeighborhoodSet.Contains((n, 0f)))
-                    continue;
-                filteredNeighborhoodSet.UnionWith(FindNearbySubtreeNodes(n, node, position));
+                var root = FindSubtreeRoot(node);
+                var foundSubtreeNodes = FindNearbySubtreeNodes(root, node, position); // Selects all nodes inside the same tree as the targetNode. Does not consider Neighborhood.
+                var neighborhoodNodes = PCGGraph.GetOpenNodeNeighborhood(foundSubtreeNodes.Select(t => t.Item1).Concat(new[] { node }).ToArray());
+                var filteredNeighborhoodSet = new HashSet<(HGraphNodeData node, float distance)>();
+                foreach (var n in neighborhoodNodes)
+                {
+                    if (filteredNeighborhoodSet.Contains((n, 0f)))
+                        continue;
+                    filteredNeighborhoodSet.UnionWith(FindNearbySubtreeNodes(n, node, position));
+                }
+                filteredNeighborhoodSet.Remove((node, 0f));
+                var completeSet = foundSubtreeNodes.Concat(filteredNeighborhoodSet);
+                var completeWithSpacesRemoved = completeSet.Where(n =>
+                {
+                    var spaceData = n.node.spaceData;
+                    if (!Settings.SelectSpaces && (spaceData != null && !spaceData.isAtomic))
+                        return false;
+                    if (Settings.ExcludeImplicitSpaces && spaceData != null && spaceData.isImplicit)
+                        return false;
+                       if (!Settings.SelectAtomics && spaceData.isAtomic)
+                        return false;
+
+                    return true;
+                }).Concat(new[] { (node, 0f) });
+                if (Settings.ExcludeAncestors)
+                    completeWithSpacesRemoved = completeWithSpacesRemoved.Except(PCGGraph.GetAncestors(node).Select(n => (n, 0f)));
+                var result = new PCGGraphSpaceSearchResult() { Nodes = completeWithSpacesRemoved.Select(i => i.node).ToList(), Distances = completeWithSpacesRemoved.Select(i => i.Item2).ToList() };
+                return result;
             }
-            filteredNeighborhoodSet.Remove((node, 0f));
-            var completeSet = foundSubtreeNodes.Concat(filteredNeighborhoodSet);
-            var completeWithSpacesRemoved = completeSet.Where(n =>
+            else if (Settings.NeighborhoodMode == NeighborhoodMode.Spatial)
             {
-                var spaceData = n.node.spaceData;
-                if (!Settings.SelectSpaces && (spaceData != null && !spaceData.isAtomic))
-                    return false;
-                if (Settings.ExcludeImplicitSpaces && spaceData != null && spaceData.isImplicit)
-                    return false;
-                return true;
-            }).Concat(new[] { (node, 0f) });
-            if (Settings.ExcludeAncestors)
-                completeWithSpacesRemoved = completeWithSpacesRemoved.Except(PCGGraph.GetAncestors(node).Select(n => (n, 0f)));
-            var result = new PCGGraphSpaceSearchResult() { Nodes = completeWithSpacesRemoved.Select(i => i.node).ToList(), Distances = completeWithSpacesRemoved.Select(i => i.Item2).ToList() };
-            return result;
+                if(position == null)
+                    position = node.spaceData.nodePosition;
+               return FindNearbyNodes((Vector3)position);
+            }
+            else return PCGGraphSpaceSearchResult.Empty;
         }
         private IEnumerable<(HGraphNodeData node, float distance)> FindNearbySubtreeNodes(HGraphNodeData currentNode, HGraphNodeData targetNode, Vector3? position)
         {
@@ -303,10 +363,41 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
 
         public PCGGraphSpaceSearchResult FindNearbyNodes(Vector3 position)
         {
-            var spaceNode = FindSpace(position);
-            if (spaceNode == null)
-                return PCGGraphSpaceSearchResult.Empty;
-            return FindNearbyNodes(spaceNode, position);
+            if (Settings.NeighborhoodMode == NeighborhoodMode.Graph)
+            {
+                var spaceNode = FindSpace(position);
+                if (spaceNode == null)
+                    return PCGGraphSpaceSearchResult.Empty;
+                return FindNearbyNodes(spaceNode, position);
+            }
+            else if (Settings.NeighborhoodMode == NeighborhoodMode.Spatial)
+            {
+                HashSet<(HGraphNodeData, float)> foundNodes = new(new TupleFirstItemEqualityComparer<HGraphNodeData, float>());
+                // All nodes in range. considers distance, SelectSpaces,SelectAtomics,ExcludeImplicitSpace
+                foreach (var node in PCGGraph.Nodes.Values)
+                {
+                    var nodeSpace = node.spaceData;
+                    var distance = PCGGraphSpaceUtility.Distance(position, node, PCGGraph, out _);
+                    if (distance <= Settings.MaxDistance)// Discard far away nodes
+                    {
+                        if (nodeSpace.isAtomic)// Atomic Node removal
+                        {
+                            if (Settings.SelectAtomics)
+                            {
+                                foundNodes.Add((node, distance));
+                            }
+                        }
+                        else
+                        {
+                            if (Settings.ExcludeImplicitSpaces && nodeSpace.isImplicit)
+                                continue;
+                            foundNodes.Add((node, distance));
+                        }
+                    }
+                }
+                return new PCGGraphSpaceSearchResult() { Nodes = foundNodes.Select(n => n.Item1).ToList(), Distances = foundNodes.Select(n => n.Item2).ToList() };
+            }
+            return PCGGraphSpaceSearchResult.Empty;
         }
         public HGraphNodeData FindSpace(Vector3 position) => Settings.FallbackNearestSpace ? PCGGraphSpaceUtility.FindNearestSpace(position, PCGGraph) : PCGGraphSpaceUtility.FindSpace(position, PCGGraph);
 

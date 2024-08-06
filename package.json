@@ -7,7 +7,8 @@
   "unityRelease": "0b5",
   "author": {
     "name": "Achioto",
-    "email": "achioto.solo@gmail.com"
+    "email": "achim.bunke.dev@gmail.com",
+	"url" : "https://github.com/AchimBunke"
   },
   "dependencies": {
     "com.unity.splines": "2.5.2",
@@ -19,5 +20,11 @@
       "description": "Demo and tutorial scenes that demostrate the gamespace graph and PCG generation techniques implemented in this project.",
       "path": "Samples~/"
     }
+  ],
+  "keywords": [
+    "pcg",
+    "gamespace",
+    "generation",
+	"procedural"
   ]
 }

@@ -1,8 +1,8 @@
 {
   "name": "com.achioto.gamespace-pcg",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "displayName": "Gamespace Graph PCG",
-  "description": "Gamespace generation using gamespace graph and pcg.",
+  "description": "Gamespace generation using a gamespace graph.\n\n!! Required dependencies: !!\n- https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts\n- https://github.com/AchimBunke/Unity_CustomUtilities.git\n- https://github.com/applejag/Newtonsoft.Json-for-Unity.Converters.git#1.6.3\n\n\nGamespace graph as a design tool to shape properties of levels.\nPCG tools that uses gamespace graph data to generate PCG configurations and content.\n\nImport Samples for tutorials.",
   "unity": "2022.1",
   "unityRelease": "0b5",
   "author": {
@@ -14,10 +14,10 @@
     "com.unity.mathematics": "1.2.6"
   },
   "samples": [
-	{
-		"displayName": "Graph and Generation Samples",
-        "description": "Demo and tutorial scenes that demostrate the gamespace graph and PCG generation techniques implemented in this project.",
-        "path": "Samples~/"
+    {
+      "displayName": "Graph and Generation Samples",
+      "description": "Demo and tutorial scenes that demostrate the gamespace graph and PCG generation techniques implemented in this project.",
+      "path": "Samples~/"
     }
-	]
+  ]
 }

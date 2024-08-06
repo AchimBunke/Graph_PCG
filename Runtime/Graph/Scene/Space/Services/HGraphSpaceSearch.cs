@@ -197,13 +197,24 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
 
     public class PCGGraphSpaceSearch
     {
-        private PCGGraph PCGGraph => PCGGraphManager.Instance.PCGGraph;
+        private PCGGraph GetPCGGraph() => PCGGraphManager.Instance.PCGGraph;
+        private PCGGraph pcgGraph;
+        public PCGGraph PCGGraph
+        {
+            get => pcgGraph ?? GetPCGGraph();
+            set => pcgGraph = value;
+        }
         public HGraphSpaceSearchSettings Settings { get; set; }
 
         public PCGGraphSpaceSearch() { Settings = HGraphSpaceSearchSettings.Default; }
         public PCGGraphSpaceSearch(HGraphSpaceSearchSettings settings)
         {
             Settings = settings;
+        }
+        public PCGGraphSpaceSearch(HGraphSpaceSearchSettings settings, PCGGraph graph)
+        {
+            Settings = settings;
+            PCGGraph = graph;
         }
 
         private SpatialDistanceMeasure _spatialDistantMeasure;
@@ -252,13 +263,13 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
             {
                 if (position != null)
                 {
-                    distance = PCGGraphSpaceUtility.Distance((Vector3)position, currentNode, out _);
+                    distance = PCGGraphSpaceUtility.Distance((Vector3)position, currentNode, PCGGraph, out _);
                     if (distance <= Settings.MaxDistance)// Discard far away nodes
                         inDistance = true;
                 }
                 else
                 {
-                    distance = PCGGraphSpaceUtility.Distance(targetNode.spaceData.nodePosition, currentNode, out _);
+                    distance = PCGGraphSpaceUtility.Distance(targetNode.spaceData.nodePosition, currentNode, PCGGraph, out _);
                     if (distance <= Settings.MaxDistance)// Discard far away nodes
                         inDistance = true;
                 }
@@ -297,7 +308,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
                 return PCGGraphSpaceSearchResult.Empty;
             return FindNearbyNodes(spaceNode, position);
         }
-        public HGraphNodeData FindSpace(Vector3 position) => Settings.FallbackNearestSpace ? PCGGraphSpaceUtility.FindNearestSpace(position) : PCGGraphSpaceUtility.FindSpace(position);
+        public HGraphNodeData FindSpace(Vector3 position) => Settings.FallbackNearestSpace ? PCGGraphSpaceUtility.FindNearestSpace(position, PCGGraph) : PCGGraphSpaceUtility.FindSpace(position, PCGGraph);
 
         private HGraphNodeData FindSubtreeRoot(HGraphNodeData targetNode) => PCGGraphManager.Instance.PCGGraph.GetAncestors(targetNode).LastOrDefault() ?? targetNode;
 
@@ -379,23 +390,22 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
     }
     public static class PCGGraphSpaceUtility
     {
-        public static PCGGraph PCGGraph => PCGGraphManager.Instance.PCGGraph;
-        public static HGraphNodeData FindSpace(Vector3 point)
+        public static HGraphNodeData FindSpace(Vector3 point, PCGGraph graph)
         {
-            var firstHit = PCGGraph.Nodes.Values.Where(n => n.spaceData != null && !n.spaceData.isAtomic).FirstOrDefault(sn => IsPointInsideSpaceOrSubspace(point, sn, out _));
+            var firstHit = graph.Nodes.Values.Where(n => n.spaceData != null && !n.spaceData.isAtomic).FirstOrDefault(sn => IsPointInsideSpaceOrSubspace(point, sn, graph, out _));
             if (firstHit == null)
                 return default;
-            return FindSubspace(firstHit, point);
+            return FindSubspace(firstHit, graph, point);
         }
 
-        public static HGraphNodeData FindSubspace(HGraphNodeData node, Vector3 point)
+        public static HGraphNodeData FindSubspace(HGraphNodeData node, PCGGraph graph, Vector3 point)
         {
             var nodeSpace = node.spaceData;
-            if (IsPointInsideSpaceOrSubspace(point, node, out var subSpaceNode))
+            if (IsPointInsideSpaceOrSubspace(point, node, graph, out var subSpaceNode))
             {
                 if (subSpaceNode == node)
                     return subSpaceNode;
-                return FindSubspace(subSpaceNode, point);
+                return FindSubspace(subSpaceNode, graph, point);
             }
             else
             {
@@ -403,18 +413,18 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
             }
         }
 
-        public static HGraphNodeData FindNearestSpace(Vector3 point)
+        public static HGraphNodeData FindNearestSpace(Vector3 point, PCGGraph graph)
         {
             var currentMinDistance = float.MaxValue;
             HGraphNodeData currentNearestSpaceNode = default;
-            foreach (var n in PCGGraph.Nodes.Values.Where(n => n.spaceData != null))
+            foreach (var n in graph.Nodes.Values.Where(n => n.spaceData != null))
             {
                 var spaceData = n.spaceData;
                 if (n == null)
                     continue;
                 if (spaceData.isImplicit || spaceData.isAtomic)
                     continue;
-                var distance = PCGGraph.Distance(point, n, out _);
+                var distance = graph.Distance(point, n, out _);
                 if (distance < currentMinDistance)
                 {
                     currentNearestSpaceNode = n;
@@ -423,9 +433,9 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
                 if (distance == 0)
                     break;
             }
-            return currentMinDistance == 0 ? FindSubspace(currentNearestSpaceNode, point) : currentNearestSpaceNode;
+            return currentMinDistance == 0 ? FindSubspace(currentNearestSpaceNode, graph, point) : currentNearestSpaceNode;
         }
-        public static bool IsPointInsideSpaceOrSubspace(Vector3 point, HGraphNodeData nodeData, out HGraphNodeData subSpaceNode)
+        public static bool IsPointInsideSpaceOrSubspace(Vector3 point, HGraphNodeData nodeData, PCGGraph graph, out HGraphNodeData subSpaceNode)
         {
             HGraphSpaceData nodeSpace = null;
             subSpaceNode = null;
@@ -441,14 +451,14 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
             }
             if (nodeSpace.isImplicit)
             {
-                if (CheckChildrenForPoint(nodeData, point, out subSpaceNode))
+                if (CheckChildrenForPoint(nodeData, point, graph, out subSpaceNode))
                     return true;
                 return false;
             }
             if (nodeSpace.IsPointInsideSpace(point))
             {
                 // check if in subspace instead
-                if (CheckChildrenForPoint(nodeData, point, out subSpaceNode))
+                if (CheckChildrenForPoint(nodeData, point, graph, out subSpaceNode))
                     return true;
                 else
                     subSpaceNode = nodeData;
@@ -456,9 +466,9 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
             }
             return false;
         }
-        private static bool CheckChildrenForPoint(HGraphNodeData nodeData, Vector3 point, out HGraphNodeData subSpaceNode)
+        private static bool CheckChildrenForPoint(HGraphNodeData nodeData, Vector3 point, PCGGraph graph, out HGraphNodeData subSpaceNode)
         {
-            foreach (var child in PCGGraph.GetChildren(nodeData))
+            foreach (var child in graph.GetChildren(nodeData))
             {
                 if (child == null)
                     continue;
@@ -467,7 +477,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
                     continue;
                 if (subSpace.isImplicit)
                 {
-                    if (IsPointInsideSpaceOrSubspace(point, child, out subSpaceNode))
+                    if (IsPointInsideSpaceOrSubspace(point, child, graph, out subSpaceNode))
                         return true;
                 }
                 else if (subSpace.IsPointInsideSpace(point))
@@ -480,7 +490,7 @@ namespace Achioto.Gamespace_PCG.Runtime.Graph.Scene.Space.Services
             return false;
         }
 
-        public static float Distance(Vector3 point, HGraphNodeData node, out Vector3 closestPoint)
-            => PCGGraph.Distance(point, node, out closestPoint);
+        public static float Distance(Vector3 point, HGraphNodeData node, PCGGraph graph, out Vector3 closestPoint)
+            => graph.Distance(point, node, out closestPoint);
     }
 }

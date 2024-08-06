@@ -1,3 +1,5 @@
+// Modified 2024 by Achim Bunke
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +16,7 @@ class CollapseEventUtils
 }
 public class InfiniteMap : AbstractMap {
 	private Dictionary<Vector3Int, Slot> slots;
-	public event Action<Slot> SlotAdded; //Achim Added
+	public event Action<Slot> SlotAdded; // Modified 2024 by Achim Bunke
 
     public readonly int Height;
 
@@ -49,7 +51,7 @@ public class InfiniteMap : AbstractMap {
 		var newSlot = new Slot(position, this, this.defaultColumn.GetSlot(position));
 		this.slots[position] = newSlot;
 
-        SlotAdded?.Invoke(newSlot); //Achim Added
+        SlotAdded?.Invoke(newSlot); // Modified 2024 by Achim Bunke
         return newSlot;
 	}
 

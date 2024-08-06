@@ -17,7 +17,7 @@
 	{
 		"displayName": "Point Samplers",
         "description": "Contains a demo for PCGPointSamplers",
-        "path": "Samples~/PointSamplers"
+        "path": "Samples~"
     }
 	]
 }

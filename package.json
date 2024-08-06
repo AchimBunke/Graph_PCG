@@ -15,8 +15,8 @@
   },
   "samples": [
 	{
-		"displayName": "Point Samplers",
-        "description": "Contains a demo for PCGPointSamplers",
+		"displayName": "Graph and Generation Samples",
+        "description": "Demo and tutorial scenes that demostrate the gamespace graph and PCG generation techniques implemented in this project.",
         "path": "Samples~"
     }
 	]

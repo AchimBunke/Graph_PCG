@@ -10,7 +10,7 @@
     "email": "achim.bunke.dev@gmail.com",
 	"url" : "https://github.com/AchimBunke"
   },
-  "licensesUrl": "https://github.com/AchimBunke/Graph_PCG/blob/master/LICENSE",
+  "licensesUrl": "https://github.com/AchimBunke/Graph_PCG/blob/master/LICENSE.md",
   "dependencies": {
     "com.unity.splines": "2.5.2",
     "com.unity.mathematics": "1.2.6"
